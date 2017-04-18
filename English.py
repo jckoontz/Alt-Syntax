@@ -9,16 +9,20 @@ from nltk.compat import unicode_repr
 from nltk.parse.api import ParserI
 
 imperative_grammar = nltk.CFG.fromstring("""                                                                                                                                     
-  S -> S_Imperative | S_Interogative | S_Subjunctive
+  S -> S_Imperative | S_Interogative | S_Subjunctive 
 
   S_Interogative -> Aux NP VP Q 
 
   S_Imperative -> VP
 
-  VP -> V NP | V NP PP | V PP | V AVP |  V | Aux Con_Neg VP | Aux_Con VP 
+  S_Subjunctive -> ConS S_Subjunctive S_Conditional | NP VP 
+
+  S_Conditional -> NP Aux VP 
+
+  VP -> V NP | V NP PP | V PP | V AVP |  V | Aux Con_Neg VP | Aux_Con VP | Aux VP
                                                                                                           
   PP -> P NP                                                                                                                                                                     
-  V ->  "stop" | "change" | "run" | "play" | "snow" | "rain" | "go" | "work"                                                                                                              
+  V ->  "stop" | "change" | "run" | "play" | "snow" | "rain" | "go" | "work" | "were"                                                                                                               
   AVP -> ADV | ADV PP                                                                                                                                                                     
   ADV -> "left" | "right" | "straight"                                                                                                                                           
   NP -> Det NP | N PP | N 
@@ -30,15 +34,17 @@ imperative_grammar = nltk.CFG.fromstring("""
   Con_Neg -> "not"  
 
   Con -> "and"
+
+  ConS -> "if"
                                                                                                                                          
-  Aux -> "Do" | "Does" | "Can" | "Could" | "Would"                                                                                                                                                                 
+  Aux -> "Do" | "Does" | "Can" | "Could" | "Would" | "would"                                                                                                                                                                 
   Aux_Con -> "Don't"  
 
   Q -> "?"
 
   """)
 
-sentence = "Could he play ?".split()
+sentence = "if I were in Seattle it would rain ".split()
 rd_parser = nltk.RecursiveDescentParser(imperative_grammar)
 for tree in rd_parser.parse(sentence):
     print(tree)

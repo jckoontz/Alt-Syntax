@@ -1,0 +1,45 @@
+% start CP
+# ############################
+
+# Grammar Rules
+# ############################
+CP -> Cbar[stype=decl] | Cbar[stype=imper] 
+Cbar[stype=imper] -> IP[+TNS]
+Cbar[stype=decl] -> IP[+TNS]
+IP[+TNS] -> DP[num=?n,pers=?p,case=nom] VP[num=?n,pers=?p] | VP[num=?n,pers=?p,tns=?t,type=?t] 
+DP[num=?n,pers=?p,case=?k] ->  Dbar[num=?n,pers=?p,case=?k]
+Dbar[num=?n,pers=?p] -> D[num=?n,DEF=?d,COUNT=?c] NP[num=?n,pers=?p,DEF=?d,COUNT=?c]
+Dbar[num=?n,pers=?p] -> NP[num=?n,pers=?p,DEF=?d,COUNT=?c]
+Dbar[num=?n,pers=?p,case=?k] -> D[num=?n,pers=?p,+DEF,type=pron,case=?k]
+NP[num=?n,pers=?p,COUNT=?c] -> N[num=?n,pers=?p,type=prop,COUNT=?c]
+VP[num=?n,pers=?p,tns=?t] -> V[num=?n,pers=?p,val=1,tns=?t]
+VP[num=?n,pers=?p,tns=?t] -> V[num=?n,pers=?p,val=2,tns=?t] DP[case=acc] 
+VP[num=?n,pers=?p,tns=?t] -> V[num=?n,pers=?p,val=2,tns=?t] 
+VP[num=?n,pers=?p,tns=?t] -> AUX[tns=?t] VP[tns=?t,type=part]
+VP[num?=n,pers=?p,val=2,type=?t] -> V[num=?n,pers=?p,val=2,type=?t] Cbar[stype=decl,type=?t]
+VP[num=?n,pers=?p,tns=?t] -> V[num=?n,pers=?p,val=1,tns=?t,type=?t] | AdvP V[num=?n,pers=?p,val=1,tns=?t,type=?t] AdvP | V[num=?n,pers=?p,val=1,tns=?t,type=?t] AdvP
+Cbar[stype=decl,type=reg] -> Comp IP[+TNS]
+Cbar[stype=decl,type=doubt] -> IN IP[+TNS]
+Cbar[stype=decl,type=wish,val=2] -> TO VP[tns=fut]
+AdvP[type=?t] -> ADV[-NEG] | ADV[+NEG]
+
+# ############################
+# Lexical Rules
+# ############################
+D[-DEF,+COUNT,num=sg] -> 'un' | 'una'
+D[-DEF,+COUNT,num=sg] -> 'an'
+D[+DEF] -> 'este' | 'esta'
+D[+DEF,gen=f,num=sg,case=nom,type=pron] -> 'ella'
+D[+DEF,gen=f,num=pl,case=nom,type=pron] -> 'ellas'
+D[+DEF,gen=m,num=sg,case=nom,type=pron] -> 'él'
+D[+DEF,gen=m,num=pl,case=nom,type=pron] -> 'ellos'
+D[+DEF,gen=n,num=sg,type=pron] -> 'lo' | 'yo' | 'ello' 
+D[+DEF,gen=n,num=sg,case=dat,type=pron] -> 'le' | 'les' | 'se'
+
+N[num=sg,pers=3,type=prop] -> 'Juan' | 'Maria' | 'Peter' | 'Iñaki' | 'Lorea' | 'Jordan' | 'Isabela' | 'Osasuna' | 'Barcelona'  
+N[num=sg,pers=2,type=fam] -> 'tú' | 'vos'
+V[tns=pres,num=sg,pers=3,val=2] -> 'ama' | 'llama' | 've' | 'compra' | 'baila' | 'gana' | 'estudia'
+V[tns=imper,num=sg,pers=2,val=1,stype=imper] -> 'venga' | 'vení' | 'vengas'
+V[tns=imper,num=pl,pers=3,val=1,stype=imper] -> 'vengan' 
+ADV[type=place] -> 'acá' | 'aquí' 
+ADV[+NEG] -> 'no' | 'No' | 'nunca'

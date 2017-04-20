@@ -16,7 +16,7 @@ import sys, nltk
 
 
 # define the name of your grammar here
-grammarFile = "featureGrammarSP.fcfg"
+grammarFile = "featureGrammar.fcfg"
 
 # loading the grammar
 fcfg = nltk.data.load(grammarFile)

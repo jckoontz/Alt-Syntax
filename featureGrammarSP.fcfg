@@ -44,4 +44,4 @@ V[tns=pres,num=sg,pers=3,val=2,mood=indic] -> 'ama' | 'llama' | 've' | 'compra' 
 V[tns=imper,num=sg,pers=2,val=1,mood=imper] -> 'venga' | 'vení' | 'vengas'
 V[tns=imper,num=pl,pers=3,val=1,mood=imper] -> 'vengan' 
 ADV[type=place] -> 'acá' | 'aquí' 
-ADV[+NEG] -> 'no' | 'No' | 'nunca' | " "
+ADV[+NEG] -> 'no' | 'No' | 'nunca' 

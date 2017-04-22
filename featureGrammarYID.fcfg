@@ -1,0 +1,23 @@
+% start CP
+
+# ########################
+# Grammar Rules
+# ########################
+
+CP -> Cbar[mood=indic] | Cbar[mood=imper]
+Cbar[mood=?m] -> IP[+TNS,mood=?m]
+IP[+TNS,mood=?m] -> DP[num=?n,pers=?p,case=nom] VP [num=?n,pers=?p,mood=?m] | VP[num=?n,pers=?p,tns=?t,type=?t,mood=imper]
+
+DP[num=?n,pers=?p,case=?k] -> Dbar[num=?n,pers=?p,DEF=?d,COUNT=?c]
+Dbar[num=?n,pers=?p] -> D[num=?n,pers=?p,case=?k] NP[num=?n,pers=?p,DEF=?d,COUNT=?c]
+Dbar[]
+
+
+
+
+
+# ########################
+# Lexical Rules
+# ########################
+
+

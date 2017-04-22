@@ -14,9 +14,11 @@
 
 import sys, nltk
 
-
 # define the name of your grammar here
-grammarFile = "featureGrammarSP.fcfg"
+grammarFile = input('Enter your feature grammar file: ')
+
+# define the utterance to parse
+tokens = input('Enter the utterance to parse: ')
 
 # loading the grammar
 fcfg = nltk.data.load(grammarFile)
@@ -25,16 +27,16 @@ fcfg = nltk.data.load(grammarFile)
 fcp = nltk.parse.FeatureChartParser(fcfg, trace=1)
 
 
-def main(tokens):
-	result = list(fcp.parse(tokens))
-	if result:
-		for x in result:
-			print(x)
-	else:
-		print("*", " ".join(tokens))
+def main():
+        result = list(fcp.parse(tokens))
+        if result:
+            for x in result:
+                print(x)
+        else:
+            print("*", " ".join(tokens))
 
 
 if __name__=="__main__":
-	main(sys.argv[1:])
+        main(sys.argv[1:])
 
 

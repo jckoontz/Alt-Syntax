@@ -56,17 +56,9 @@ V[tns=imper,num=pl,pers=3,val=1,mood=imper] -> 'vengan'
 V[tns=pres,num=sg,pers=1,val=2,type=part,mood=indic] -> 'estudiado'
 V[tns=pres,num=sg,pers=2,val=1,mood=subj] -> 'vengas'
 V[tns=cond,num=sg,pers=1,val=1,mood=cond,type=probability] -> 'haría' | 'estudiaría' | 'llamaría'
-ADV[type=place] -> 'acá' | 'aquí' 
-<<<<<<< HEAD
+ADV[type=place] -> 'acá' | 'aquí'
 ADV[+NEG] -> 'no' | 'No' | 'nunca' 
 Conj -> 'que' | 'Que'
 AUX[tns=pres,num=sg,pers=1,val=1] -> 'he'
 
-
-=======
-<<<<<<< HEAD
-ADV[+NEG] -> 'no' | 'No' | 'nunca'
-||||||| merged common ancestors
-ADV[+NEG] -> 'no' | 'No' | 'nunca' | " "
->>>>>>> 18788e284aef516d58232f67406b97a4e2a12c9a
 

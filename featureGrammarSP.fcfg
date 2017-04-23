@@ -3,25 +3,33 @@
 # ############################
 # Grammar Rules
 # ############################
-# mood: indicative (indic), imperative (imper), or subjunctive (subj)
+# mood: indicative (indic), imperative (imper), subjunctive (subj), or conditional (cond) 
 # 
-CP -> Cbar[mood=indic] | Cbar[mood=imper] 
+CP[mood=?m] -> Cbar[mood=?m]
 Cbar[mood=?m] -> IP[+TNS,mood=?m]
-IP[+TNS,mood=?m] -> DP[num=?n,pers=?p,case=nom] VP[num=?n,pers=?p,mood=?m] | VP[num=?n,pers=?p,tns=?t,type=?t,mood=imper] 
+IP[+TNS,mood=?m] -> DP[num=?n,pers=?p,case=nom] VP[num=?n,pers=?p,mood=?m] | VP[num=?n,pers=?p,tns=?t,type=?t,mood=imper] | VP[num=?n,pers=?p,mood=?m] | Conj IP[+TNS,mood=?m] | DP[num=?n,pers=?p,case=nom] AUX[tns=?t,mood=?m] VP[num=?n,pers=?p,mood=?m]
+
 DP[num=?n,pers=?p,case=?k] ->  Dbar[num=?n,pers=?p,case=?k]
 Dbar[num=?n,pers=?p] -> D[num=?n,DEF=?d,COUNT=?c] NP[num=?n,pers=?p,DEF=?d,COUNT=?c]
 Dbar[num=?n,pers=?p] -> NP[num=?n,pers=?p,DEF=?d,COUNT=?c]
 Dbar[num=?n,pers=?p,case=?k] -> D[num=?n,pers=?p,+DEF,type=pron,case=?k]
 NP[num=?n,pers=?p,COUNT=?c] -> N[num=?n,pers=?p,type=prop,COUNT=?c]
 VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=?t,mood=?m]
+VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=?t,mood=?m,type=volition] CP[mood=subjunctive]
 VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=2,tns=?t,mood=?m] DP[case=acc] 
-VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=2,tns=?t,mood=?m] 
+VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=2,tns=?t,mood=?m] VP[num=?n,pers=?p,tns=?t,mood=?m]
 VP[num=?n,pers=?p,tns=?t,mood=?m] -> AUX[tns=?t] VP[tns=?t,type=part]
+VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[tns=pret,num=sg,pers=1,val=1,mood=indic] VP[num=?n,pers=?p,tns=?t, type=?t]
+VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=infin,type=infinitive]
+VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=2,tns=?t,mood=?m] 
 VP[num?=n,pers=?p,val=2,type=?t,mood=?m] -> V[num=?n,pers=?p,val=2,type=?t,mood=?m] Cbar[mood=decl,type=?t]
 VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=?m] | AdvP V[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=?m] AdvP | V[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=?m] AdvP
-Cbar[mood=decl,type=reg] -> Comp IP[+TNS]
-Cbar[mood=decl,type=doubt] -> IN IP[+TNS]
-Cbar[mood=decl,type=wish,val=2] -> TO VP[tns=fut]
+VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=pres] VP[num=?n,pers=?p,tns=?t, type=?t]
+VP[num=?n,pers=?p,tns=?t,mood=?m] -> Conj VP[num=?n,pers=?p,tns=?t,mood=?m]
+
+#Cbar[mood=decl,type=reg] -> Comp IP[+TNS]
+#Cbar[mood=decl,type=doubt] -> IN IP[+TNS]
+#Cbar[mood=decl,type=wish,val=2] -> TO VP[tns=fut]
 AdvP[type=?t] -> ADV[-NEG,type=?t] | ADV[+NEG,type=?t]
 
 # ############################
@@ -37,15 +45,28 @@ D[+DEF,gen=m,num=sg,case=nom,type=pron] -> 'él'
 D[+DEF,gen=m,num=pl,case=nom,type=pron] -> 'ellos'
 D[+DEF,gen=n,num=sg,type=pron] -> 'lo' | 'yo' | 'ello' 
 D[+DEF,gen=n,num=sg,case=dat,type=pron] -> 'le' | 'les' | 'se'
-
-N[num=sg,pers=3,type=prop] -> 'Juan' | 'Maria' | 'Peter' | 'Iñaki' | 'Lorea' | 'Jordan' | 'Isabela' | 'Osasuna' | 'Barcelona'  
+N[num=sg,pers=3,type=prop] -> 'Juan' | 'Maria' | 'Peter' | 'Iñaki' | 'Lorea' | 'Jordan' | 'Isabela' | 'Osasuna' | 'Barcelona' | 'castellano' 
 N[num=sg,pers=2,type=fam] -> 'tú' | 'vos'
+V[tns=pres,num=sg,pers=1,val=1,mood=indic] -> 'quiero' | 'necesito' | 'exijo' | 'demano' | 'sugiero' | 'espero' | 'pido'
 V[tns=pres,num=sg,pers=3,val=2,mood=indic] -> 'ama' | 'llama' | 've' | 'compra' | 'baila' | 'gana' | 'estudia'
+V[tns=pret,num=sg,pers=1,val=1,mood=indic] -> 'quise' | 'necesité' | 'exijí' | 'demandé' | 'sugerí' | 'esperé' | 'pedí'
+V[tns=infin,type=infinitive] -> 'estudiar' | 'viajar'
 V[tns=imper,num=sg,pers=2,val=1,mood=imper] -> 'venga' | 'vení' | 'vengas'
 V[tns=imper,num=pl,pers=3,val=1,mood=imper] -> 'vengan' 
+V[tns=pres,num=sg,pers=1,val=2,type=part,mood=indic] -> 'estudiado'
+V[tns=pres,num=sg,pers=2,val=1,mood=subj] -> 'vengas'
+V[tns=cond,num=sg,pers=1,val=1,mood=cond,type=probability] -> 'haría' | 'estudiaría' | 'llamaría'
 ADV[type=place] -> 'acá' | 'aquí' 
+<<<<<<< HEAD
+ADV[+NEG] -> 'no' | 'No' | 'nunca' 
+Conj -> 'que' | 'Que'
+AUX[tns=pres,num=sg,pers=1,val=1] -> 'he'
+
+
+=======
 <<<<<<< HEAD
 ADV[+NEG] -> 'no' | 'No' | 'nunca'
 ||||||| merged common ancestors
 ADV[+NEG] -> 'no' | 'No' | 'nunca' | " "
+>>>>>>> 18788e284aef516d58232f67406b97a4e2a12c9a
 

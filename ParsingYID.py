@@ -24,8 +24,8 @@ fcfg = nltk.data.load(grammarFile)
 fcp = nltk.parse.FeatureChartParser(fcfg, trace=1)
 
 
-def main(input):
-        result = list(fcp.parse(input))
+def main(tokens):
+        result = list(fcp.parse(tokens))
         if result:
             for x in result:
                 print(x)

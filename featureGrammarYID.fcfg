@@ -1,5 +1,14 @@
 % start CP
 
+# #######################
+# Sample test sentences:
+# zi tantst
+# ikh shlof
+# er shraybt
+# zey shrayben 
+# 
+# #######################
+
 # ########################
 # Grammar Rules
 # ########################
@@ -8,15 +17,15 @@ CP -> Cbar[mood=indic] | Cbar[mood=imper]
 Cbar[mood=?m] -> IP[+TNS,mood=?m]
 IP[+TNS,mood=?m] -> DP[num=?n,pers=?p,case=nom] VP[num=?n,pers=?p,mood=?m] | VP[num=?n,pers=?p,tns=?t,type=?t,mood=imper]
 
-DP[num=?n,pers=?p,case=?k] -> Dbar[num=?n,pers=?p,DEF=?d,COUNT=?c]
-Dbar[num=?n,pers=?p] -> D[num=?n,pers=?p,case=?k] NP[num=?n,pers=?p,DEF=?d,COUNT=?c]
+DP[num=?n,pers=?p,case=?k,polarity=?q] -> ADV[polarity=?q] Dbar[num=?n,pers=?p,DEF=?d,COUNT=?c] | Dbar[num=?n,pers=?p,DEF=?d,COUNT=?c]
+Dbar[num=?n,pers=?p] -> D[num=?n,pers=?p] NP[num=?n,pers=?p,DEF=?d,COUNT=?c] | DP[num=?n,pers=?p,polarity=?q] NP[num=?n,pers=?p,DEF=?d,COUNT=?c]
 Dbar[num=?n,pers=?p,case=?k] -> NP[num=?n,pers=?p,DEF=?d,case=?k]
 Dbar[num=?n,pers=?p,case=?k] -> D[num=?n,pers=?p,DEF=?d,COUNT=?c]
 NP[num=?n,pers=?p,case=?k] -> N[num=?n,pers=?p,+DEF,type=pron,case=?k]
 VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=0,tns=?t,mood=?m]
 VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=?t,mood=?m,type=volition] CP[mood=subjunctive]
-VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=2,tns=?t,mood=?m] DP[case=acc]
-VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=2,tns=?t,mood=?m] VP[num=?n,pers=?p,tns=?t,mood=?m]
+VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=?t,mood=?m] DP[case=acc]
+VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=?t,mood=?m] VP[num=?n,pers=?p,tns=?t,mood=?m]
 VP[num=?n,pers=?p,tns=?t,mood=?m] -> AUX[tns=?t] VP[tns=?t,type=part]
 VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[tns=pret,num=sg,pers=1,val=1,mood=indic] VP[num=?n,pers=?p,tns=?t, type=?t]
 VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=infin,type=infinitive]
@@ -32,7 +41,7 @@ VP[num=?n,pers=?p,tns=?t,mood=?m] -> Conj VP[num=?n,pers=?p,tns=?t,mood=?m]
 # ########################
 
 D[-DEF,+COUNT,num=sg,polarity=pos] -> 'a' | 'an'
-D[-DEF,+COUNT,-pos,polarity=neg] -> 'nit keyn'
+D[-DEF,+COUNT,-pos,polarity=neg] -> 'keyn'
 
 D[+DEF,gen=f,num=sg,case=nom,pers=3,type=pron] -> 'zi'
 D[+DEF,gen=m,num=sg,case=nom,pers=3,type=pron] -> 'er'
@@ -45,11 +54,14 @@ D[+DEF,num=pl,case=nom,pers=3,type=pron] -> 'zey'
 
 N[NUM=sg,pers=3,gen=m,type=prop] -> 'Moyshe' | 'Dovid' | 'Yankl'
 N[NUM=sg,pers=3,gen=f,type=prop] -> 'Ester' | 'Sore' | 'Rokhl'
+N[NUM=sg,gen=m,type=common,case=acc] -> 'briv' | 'lid' | 'heymarbet'
+
 
 V[tns=pres,num=sg,pers=1,val=0,mood=indic] -> 'zing' | 'tants' | 'shrayb' | 'shlof' 
 V[tns=pres,num=sg,pers=2,val=0,mood=indic] -> 'zingst' | 'tantst' | 'shraybst' | 'shlofst'
 V[tns=pres,num=sg,pers=3,val=0,mood=indic] -> 'zingt' | 'tantst' | 'shraybt' | 'shloft'
 V[tns=inf] -> 'zingn' | 'tantsn' | 'shraybn' | 'shlofn' 
 
+V[tns=pres,num=pl,pers=3,val=1,mood=indic] -> 'shrayben'
 
-
+ADV[polarity=neg] -> 'nit'

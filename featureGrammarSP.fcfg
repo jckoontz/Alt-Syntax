@@ -22,14 +22,14 @@ VP[num=?n,pers=?p,tns=?t,mood=?m] -> AUX[tns=?t] VP[tns=?t,type=part]
 VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[tns=pret,num=sg,pers=1,val=1,mood=indic] VP[num=?n,pers=?p,tns=?t, type=?t]
 VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=infin,type=infinitive]
 VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=2,tns=?t,mood=?m] 
-VP[num?=n,pers=?p,val=2,type=?t,mood=?m] -> V[num=?n,pers=?p,val=2,type=?t,mood=?m] Cbar[mood=decl,type=?t]
+VP[num?=n,pers=?p,val=2,type=?t,mood=?m] -> V[num=?n,pers=?p,val=2,type=?t,mood=?m] Cbar[mood=indic,type=?t]
 VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=?m] | AdvP V[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=?m] AdvP | V[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=?m] AdvP
 VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=pres] VP[num=?n,pers=?p,tns=?t, type=?t]
 VP[num=?n,pers=?p,tns=?t,mood=?m] -> Conj VP[num=?n,pers=?p,tns=?t,mood=?m]
 
-#Cbar[mood=decl,type=reg] -> Comp IP[+TNS]
-#Cbar[mood=decl,type=doubt] -> IN IP[+TNS]
-#Cbar[mood=decl,type=wish,val=2] -> TO VP[tns=fut]
+#Cbar[mood=indic,type=reg] -> Comp IP[+TNS]
+#Cbar[mood=indic,type=doubt] -> IN IP[+TNS]
+#Cbar[mood=indic,type=wish,val=2] -> TO VP[tns=fut]
 AdvP[type=?t] -> ADV[-NEG,type=?t] | ADV[+NEG,type=?t]
 
 # ############################

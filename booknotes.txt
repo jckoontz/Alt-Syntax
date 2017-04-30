@@ -1,0 +1,21 @@
+The Oxford Handbook of Modality and Mood
+
+20.2 (p 474): Categorial Status of Modals
+
+- modality in formal approaches is tied to the expression of possibility and necessity
+- (in English) modals have auxiliary-like properties: not inflected, take negation directly, invert in interrogatives, can be stranded in ellipsis, can have polarity emphasis
+- syntactic status distinct from main verbs
+- transformational/minimalism/etc: modals are generated in aux position distinct from that of main verbs (usually called I or Infl (inflection)
+
+The crucial facts (in English)
+    - modals invariable precede, and dominate, any other verbs or aux
+    - modals are not tensed
+    - modals lack finite and non-finite inflection.
+    - modals invariably precede negation.
+    - modals do not trigger do-support.
+
+Except for the last two properties, these are all distinct from other auxiliaries like "have" and "be". 
+
+In G/B theory: have/be are generated in the head of a V-type projection, and they move when the I domain is available. 
+
+Note: "do" is generated similarly to modals, but as a last resort supportsinflection.

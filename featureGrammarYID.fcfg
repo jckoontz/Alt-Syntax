@@ -1,22 +1,15 @@
 % start CP
 
-# #######################
-# Sample test sentences:
-# zi tantst
-# ikh shlof
-# er shraybt
-# zey shrayben  
-# #######################
-
 # ########################
 # Grammar Rules
 # ########################
 
 CP[] -> Cbar[]
 
-Cbar[] -> IP[+TNS,mood=?m]
+Cbar[] -> IP[]
 
-IP[mood=?m] -> DP[num=?n,pers=?p,case=nom] VP[num=?n,pers=?p,tns=?t,mood=?m,conj=fin] | VP[num=?n,pers=?p,tns=?t,type=?t,mood=imper]
+IP[mood=?m,tns=?t,asp=?a] -> DP[num=?n,pers=?p,case=nom] VP[num=?n,pers=?p,tns=?t,mood=?m,asp=?a,conj=fin] 
+IP[mood=imper,tns=pres,asp=simple] -> VP[num=?n,pers=?p,tns=?t,type=?t,mood=imper]
 
 DP[num=?n,pers=?p,case=?k] -> Dbar[num=?n,pers=?p,DEF=?d,COUNT=?c,case=?k] 
 
@@ -24,13 +17,21 @@ Dbar[num=?n,pers=?p,case=?k] -> D[num=?n,pers=?p,type=art] NP[num=?n,pers=?p,DEF
 Dbar[num=?n,pers=?p,case=?k] -> NP[num=?n,pers=?p,DEF=?d,case=?k]
 Dbar[num=?n,pers=?p,case=?k,type=pron] -> D[num=?n,pers=?p,DEF=?d,COUNT=?c,case=?k]
 
-NP[num=?n,pers=?p,case=?k] -> N[num=?n,pers=?p,+DEF,type=pron,case=?k]
+NP[num=?n,pers=?p,case=?k] -> N[num=?n,pers=?p,+DEF,type=prop,case=?k]
 
-VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?j] -> V[num=?n,pers=?p,val=0,tns=?t,mood=?m,conj=?j] | V[num=?n,pers=?p,val=1,tns=?t,mood=?m,type=volition,conj=?j] CP[mood=subjunctive] | V[num=?n,pers=?p,val=1,tns=?t,mood=?m,type=volition,conj=?j] CP[mood=subjunctive] | V[num=?n,pers=?p,val=1,tns=?t,mood=?m,conj=?j] DP[case=acc] | V[num=?n,pers=?p,val=1,tns=?t,mood=?m,conj=?j] VP[num=?n,pers=?p,tns=?t,mood=?m] | V[tns=pret,num=sg,pers=1,val=1,mood=indic,conj=?j] VP[num=?n,pers=?p,tns=?t, type=?t] | V[num=?n,pers=?p,val=1,tns=infin,conj=inf] | V[num=?n,pers=?p,val=1,type=?t,mood=?m] Cbar[mood=indic,type=?t] | Conj VP[num=?n,pers=?p,tns=?t,mood=?m]
+VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?j,asp=simple,type=?y,val=?v] -> V[num=?n,pers=?p,val=0,tns=?t,mood=?m,conj=?j,type=?y] 
+VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?j,asp=simple,type=?y,val=?v] -> V[num=?n,pers=?p,val=1,tns=?t,mood=?m,sem=volition,conj=?j,type=?y] CP[mood=subjunctive] 
+VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?j,asp=simple,type=?y,val=?v] -> V[num=?n,pers=?p,val=1,tns=?t,mood=?m,sem=volition,conj=?j,type=?y] CP[mood=subjunctive] 
+VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?j,asp=simple,type=?y,val=?v] -> V[num=?n,pers=?p,val=1,tns=?t,mood=?m,conj=?j,type=?y] DP[case=acc] 
+VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?j,asp=simple,type=?y,val=?v] -> V[num=?n,pers=?p,val=1,tns=?t,mood=?m,conj=?j,type=?y] VP[num=?n,pers=?p,tns=?t,mood=?m] 
+VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?j,asp=simple,type=?y,val=?v] -> V[tns=pret,num=sg,pers=1,val=1,mood=indic,conj=?j,type=?y] VP[num=?n,pers=?p,tns=?t, type=?t] 
+VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?j,asp=simple,type=?y,val=?v] -> V[num=?n,pers=?p,val=1,tns=infin,conj=inf,type=?y] 
+#VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?j,asp=simple,type=?y,val=?v] -> V[num=?n,pers=?p,val=1,type=?t,mood=?m,type=?y] Cbar[] 
+VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?j,asp=simple,type=?y,val=?v] -> Conj VP[num=?n,pers=?p,tns=?t,mood=?m,type=?y]
 
-VP[num=?n,pers=?p,tns=?t,mood=?m,conj=fin] -> AUX[tns=?t] VP[tns=?t,type=part,conj=inf]
+VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?j,val=?v,asp=simple] -> AUX[num=?n,pers=?p,tns=?t,mood=?m,type=?y,conj=?j] VP[conj=part,type=?y,val=?v]
 
-
+VP[num=?n,pers=?p,tns=?t,moo=?m,conj=?j,val=?v,asp=?a] -> MOD[tns=?t,mood=?m,asp=?m,num=?n,pers=?p,conj=fin] VP[conj=inf,val=?v]
 
 # ########################
 # Lexical Rules
@@ -49,10 +50,36 @@ D[+DEF,num=pl,case=nom,pers=3,type=pron] -> 'zey'
 
 N[NUM=sg,pers=3,gen=m,type=prop] -> 'Moyshe' | 'Dovid' | 'Yankl'
 N[NUM=sg,pers=3,gen=f,type=prop] -> 'Ester' | 'Sore' | 'Rokhl'
-N[NUM=sg,gen=m,case=acc] -> 'briv' | 'lid' | 'heymarbet' | 'ku' | 'hintl'
+N[NUM=sg,gen=m] -> 'briv' | 'heymarbet' | 'ku'
+N[NUM=sg,gen=n] -> 'hintl' | 'lid'
 
-#AUX[tns=past,type=state]
-#AUX[type=]
+AUX[tns=past,type=act,conj=inf] -> 'hobn'
+
+AUX[tns=past,type=act,num=sg,pers=1,conj=fin,mood=indic] -> 'hob' 
+AUX[tns=past,type=act,num=sg,pers=2,conj=fin,mood=indic] -> 'host'
+AUX[tns=past,type=act,num=sg,pers=3,conj=fin,mood=indic] -> 'hot'
+AUX[tns=past,type=act,num=pl,pers=1,conj=fin,mood=inic] -> 'hobn'
+AUX[tns=past,type=act,num=pl,pers=2,conj=fin,mood=indic] -> 'hot'
+AUX[tns=past,type=act,num=pl,pers=3,conj=fin,mood=indic] -> 'hobn'
+ 
+AUX[tns=past,type=state,conj=inf] -> 'zayn'
+
+AUX[tns=past,type=state,num=sg,pers=1,conj=fin,mood=indic] -> 'bin'
+AUX[tns=past,type=state,num=sg,pers=2,conj=fin,mood=indic] -> 'bist'
+AUX[tns=past,type=state,num=sg,pers=3,conj=fin,mood=indic] -> 'iz'
+AUX[tns=past,type=state,num=pl,pers=1,conj=fin,mood=indic] -> 'zenen' | 'zaynen'
+AUX[tns=past,type=state,num=pl,pers=2,conj=fin,mood=indic] -> 'zayt'
+AUX[tns=past,type=state,num=pl,pers=3,conj=fin,mood=indic] -> 'zenen' | 'zaynen'
+
+MOD[tns=past,asp=habitual,conj=inf] -> 'flegn'
+
+MOD[conj=fin,mood=indic,tns=past,asp=habitual,num=?sg,pers=1] -> 'fleg'
+MOD[conj=fin,mood=indic,tns=past,asp=habitual,num=?sg,pers=2] -> 'flegst'
+MOD[conj=fin,mood=indic,tns=past,asp=habitual,num=?sg,pers=3] -> 'fleg'
+MOD[conj=fin,mood=indic,tns=past,asp=habitual,num=?pl,pers=1] -> 'flegn'
+MOD[conj=fin,mood=indic,tns=past,asp=habitual,num=?pl,pers=2] -> 'flegt'
+MOD[conj=fin,mood=indic,tns=past,asp=habitual,num=?pl,pers=3] -> 'flegn'
+
  
 V[val=0,conj=inf] -> 'zingn' | 'tantsn' | 'shraybn' | 'shlofn'
 
@@ -76,10 +103,13 @@ V[tns=pres,num=pl,pers=2,val=1,mood=indic,conj=fin] -> 'zingt' | 'shraybt' | 'ho
 #V[tns=pres,num=sg,pers=2,val=1,mood=indic,fam=formal,conj=fin] -> 'zingt' | 'shraybt' | 'hot'
 V[tns=pres,num=pl,pers=3,val=0,mood=indic,conj=fin] -> 'zingn' | 'shraybn' | 'hobn'
 
+V[val=0,conj=part,type=act,mood=none] -> 'gezungen' | 'getantst' | 'geshribn' | 'geshlofn'
+V[val=1,conj=part,type=act,mood=none] -> 'gezungen' | 'geshribn' | 'gehat'
 
+V[val=0,conj=part,type=state,mood=none] -> 'gegangen' | 'geforn'
 
-
-
+V[val=0,conj=fin,mood=imper,num=sg] -> 'tants'
+V[val=0,conj=fin,mood=imper,num=sg] -> 'tantst'
 
 
 

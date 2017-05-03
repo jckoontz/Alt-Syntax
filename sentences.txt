@@ -1,0 +1,13 @@
+Tenses: Past, present, future, conditional
+Aspects: Progressive, Imperfect, Perfect
+Moods: Indicative, Subjunctive, Imperative
+
+Past
+    Progressive
+        Indicative
+            "I had been walking" 
+        
+    Imperfect
+        Indicative 
+            "I
+

@@ -5,43 +5,38 @@
 # zi tantst
 # ikh shlof
 # er shraybt
-# zey shrayben 
-# 
+# zey shrayben  
 # #######################
 
 # ########################
 # Grammar Rules
 # ########################
 
-CP -> Cbar[mood=indic] | Cbar[mood=imper]
-Cbar[mood=?m] -> IP[+TNS,mood=?m]
-IP[+TNS,mood=?m] -> DP[num=?n,pers=?p,case=nom] VP[num=?n,pers=?p,mood=?m] | VP[num=?n,pers=?p,tns=?t,type=?t,mood=imper]
+CP[] -> Cbar[]
 
-DP[num=?n,pers=?p,case=?k,polarity=?q] -> ADV[polarity=?q] Dbar[num=?n,pers=?p,DEF=?d,COUNT=?c] | Dbar[num=?n,pers=?p,DEF=?d,COUNT=?c]
-Dbar[num=?n,pers=?p] -> D[num=?n,pers=?p] NP[num=?n,pers=?p,DEF=?d,COUNT=?c] | DP[num=?n,pers=?p,polarity=?q] NP[num=?n,pers=?p,DEF=?d,COUNT=?c]
+Cbar[] -> IP[+TNS,mood=?m]
+
+IP[mood=?m] -> DP[num=?n,pers=?p,case=nom] VP[num=?n,pers=?p,tns=?t,mood=?m,conj=fin] | VP[num=?n,pers=?p,tns=?t,type=?t,mood=imper]
+
+DP[num=?n,pers=?p,case=?k] -> Dbar[num=?n,pers=?p,DEF=?d,COUNT=?c,case=?k] 
+
+Dbar[num=?n,pers=?p,case=?k] -> D[num=?n,pers=?p,type=art] NP[num=?n,pers=?p,DEF=?d,COUNT=?c,case=?k]
 Dbar[num=?n,pers=?p,case=?k] -> NP[num=?n,pers=?p,DEF=?d,case=?k]
-Dbar[num=?n,pers=?p,case=?k] -> D[num=?n,pers=?p,DEF=?d,COUNT=?c]
+Dbar[num=?n,pers=?p,case=?k,type=pron] -> D[num=?n,pers=?p,DEF=?d,COUNT=?c,case=?k]
+
 NP[num=?n,pers=?p,case=?k] -> N[num=?n,pers=?p,+DEF,type=pron,case=?k]
-VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=0,tns=?t,mood=?m]
-VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=?t,mood=?m,type=volition] CP[mood=subjunctive]
-VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=?t,mood=?m] DP[case=acc]
-VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=?t,mood=?m] VP[num=?n,pers=?p,tns=?t,mood=?m]
-VP[num=?n,pers=?p,tns=?t,mood=?m] -> AUX[tns=?t] VP[tns=?t,type=part]
-VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[tns=pret,num=sg,pers=1,val=1,mood=indic] VP[num=?n,pers=?p,tns=?t, type=?t]
-VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=infin,type=infinitive]
-VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=2,tns=?t,mood=?m]
-VP[num?=n,pers=?p,val=2,type=?t,mood=?m] -> V[num=?n,pers=?p,val=2,type=?t,mood=?m] Cbar[mood=indic,type=?t]
-VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=?m] | AdvP V[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=?m] AdvP | V[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=?m] AdvP
-VP[num=?n,pers=?p,tns=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=pres] VP[num=?n,pers=?p,tns=?t, type=?t]
-VP[num=?n,pers=?p,tns=?t,mood=?m] -> Conj VP[num=?n,pers=?p,tns=?t,mood=?m]
+
+VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?j] -> V[num=?n,pers=?p,val=0,tns=?t,mood=?m,conj=?j] | V[num=?n,pers=?p,val=1,tns=?t,mood=?m,type=volition,conj=?j] CP[mood=subjunctive] | V[num=?n,pers=?p,val=1,tns=?t,mood=?m,type=volition,conj=?j] CP[mood=subjunctive] | V[num=?n,pers=?p,val=1,tns=?t,mood=?m,conj=?j] DP[case=acc] | V[num=?n,pers=?p,val=1,tns=?t,mood=?m,conj=?j] VP[num=?n,pers=?p,tns=?t,mood=?m] | V[tns=pret,num=sg,pers=1,val=1,mood=indic,conj=?j] VP[num=?n,pers=?p,tns=?t, type=?t] | V[num=?n,pers=?p,val=1,tns=infin,conj=inf] | V[num=?n,pers=?p,val=1,type=?t,mood=?m] Cbar[mood=indic,type=?t] | Conj VP[num=?n,pers=?p,tns=?t,mood=?m]
+
+VP[num=?n,pers=?p,tns=?t,mood=?m,conj=fin] -> AUX[tns=?t] VP[tns=?t,type=part,conj=inf]
+
 
 
 # ########################
 # Lexical Rules
 # ########################
 
-D[-DEF,+COUNT,num=sg,polarity=pos] -> 'a' | 'an'
-D[-DEF,+COUNT,-pos,polarity=neg] -> 'keyn'
+D[def=indef,count=no,num=sg,type=art] -> 'a' | 'an'
 
 D[+DEF,gen=f,num=sg,case=nom,pers=3,type=pron] -> 'zi'
 D[+DEF,gen=m,num=sg,case=nom,pers=3,type=pron] -> 'er'
@@ -54,14 +49,40 @@ D[+DEF,num=pl,case=nom,pers=3,type=pron] -> 'zey'
 
 N[NUM=sg,pers=3,gen=m,type=prop] -> 'Moyshe' | 'Dovid' | 'Yankl'
 N[NUM=sg,pers=3,gen=f,type=prop] -> 'Ester' | 'Sore' | 'Rokhl'
-N[NUM=sg,gen=m,type=common,case=acc] -> 'briv' | 'lid' | 'heymarbet'
+N[NUM=sg,gen=m,case=acc] -> 'briv' | 'lid' | 'heymarbet' | 'ku' | 'hintl'
+
+#AUX[tns=past,type=state]
+#AUX[type=]
+ 
+V[val=0,conj=inf] -> 'zingn' | 'tantsn' | 'shraybn' | 'shlofn'
+
+V[tns=pres,num=sg,pers=1,val=0,mood=indic,conj=fin] -> 'zing' | 'tants' | 'shrayb' | 'shlof' 
+V[tns=pres,num=sg,pers=2,val=0,mood=indic,conj=fin] -> 'zingst' | 'tantst' | 'shraybst' | 'shlofst'
+V[tns=pres,num=sg,pers=3,val=0,mood=indic,conj=fin] -> 'zingt' | 'tantst' | 'shraybt' | 'shloft'
+
+V[tns=pres,num=pl,pers=1,val=0,mood=indic,conj=fin] -> 'zingn' | 'tantsn' | 'shraybn' | 'shlofn'
+V[tns=pres,num=pl,pers=2,val=0,mood=indic,conj=fin] -> 'tantst'| 'zingt' | 'shraybt' | 'shloft'
+#V[tns=pres,num=sg,pers=2,val=0,mood=indic,fam=formal,conj=fin] -> 'tantst' | 'zingt' | 'shraybt' | 'shloft'
+V[tns=pres,num=pl,pers=3,val=0,mood=indic,conj=fin] -> 'tantsn'| 'zingn' | 'shraybn' | 'shlofn'
+
+V[val=1,conj=inf] -> 'zingn' | 'shraybn' | 'hobn'
+
+V[tns=pres,num=sg,pers=1,val=1,mood=indic,conj=fin] -> 'zing' | 'shrayb' | 'hob'
+V[tns=pres,num=sg,pers=2,val=1,mood=indic,conj=fin] -> 'zingst' | 'shraybst' | 'host'
+V[tns=pres,num=sg,pers=3,val=1,mood=indic,conj=fin] -> 'zingt' | 'shraybt' | 'hot'
+
+V[tns=pres,num=pl,pers=1,val=1,mood=indic,conj=fin] -> 'zingn' | 'shraybn' | 'hobn'
+V[tns=pres,num=pl,pers=2,val=1,mood=indic,conj=fin] -> 'zingt' | 'shraybt' | 'hot'
+#V[tns=pres,num=sg,pers=2,val=1,mood=indic,fam=formal,conj=fin] -> 'zingt' | 'shraybt' | 'hot'
+V[tns=pres,num=pl,pers=3,val=0,mood=indic,conj=fin] -> 'zingn' | 'shraybn' | 'hobn'
 
 
-V[tns=pres,num=sg,pers=1,val=0,mood=indic] -> 'zing' | 'tants' | 'shrayb' | 'shlof' 
-V[tns=pres,num=sg,pers=2,val=0,mood=indic] -> 'zingst' | 'tantst' | 'shraybst' | 'shlofst'
-V[tns=pres,num=sg,pers=3,val=0,mood=indic] -> 'zingt' | 'tantst' | 'shraybt' | 'shloft'
-V[tns=inf] -> 'zingn' | 'tantsn' | 'shraybn' | 'shlofn' 
 
-V[tns=pres,num=pl,pers=3,val=1,mood=indic] -> 'shrayben'
 
-ADV[polarity=neg] -> 'nit'
+
+
+
+
+
+
+

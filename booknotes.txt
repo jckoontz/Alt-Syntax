@@ -1,4 +1,4 @@
-The Oxford Handbook of Modality and Mood
+he Oxford Handbook of Modality and Mood
 
 20.2 (p 474): Categorial Status of Modals
 
@@ -19,3 +19,10 @@ Except for the last two properties, these are all distinct from other auxiliarie
 In G/B theory: have/be are generated in the head of a V-type projection, and they move when the I domain is available. 
 
 Note: "do" is generated similarly to modals, but as a last resort supportsinflection.
+
+More complex in German (and Yiddish):
+    - modals DO have finite and infinitival forms (zoln; ikh zol)
+    - can be inflected for tense and mood (ikh hot gekent sprakhn yidish)
+    - no positional difference between modals and main verbs
+
+Evidence for I node in German has been questioned in a number of papers

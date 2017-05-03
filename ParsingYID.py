@@ -12,7 +12,7 @@
 # or any other sentence following "python Parsing1.py"
 
 
-import sys, nltk
+import sys,io, nltk
 
 # define the name of your grammar here
 grammarFile = 'featureGrammarYID.fcfg'
@@ -22,7 +22,6 @@ fcfg = nltk.data.load(grammarFile)
 
 # defining the parser
 fcp = nltk.parse.FeatureChartParser(fcfg, trace=1)
-
 
 def main(tokens):
         result = list(fcp.parse(tokens))
@@ -35,5 +34,3 @@ def main(tokens):
 
 if __name__=="__main__":
         main(sys.argv[1:])
-
-

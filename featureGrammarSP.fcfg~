@@ -29,7 +29,7 @@ VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?c] -> MOD[tns=?t,mood=?m] VP[conj=?c,mood
 
 #VP[num=?n,pers=?p,tns=?t,mood=?m] -> Conj VP[num=?n,pers=?p,tns=?t,mood=?m,type=?t]
 VP[num?=n,pers=?p,val=2,type=?t,mood=?m] -> V[num=?n,pers=?p,val=2,type=?t,mood=?m] Cbar[stype=decl,type=?t]
-VP[num=?n,pers=?p,tns=?t,type=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=imperative] | AdvP VP[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=imperative] | V[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=imperative] AdvP
+VP[num=?n,pers=?p,tns=?t,type=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=imperative] | AdvP V[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=imperative] AdvP | V[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=imperative] AdvP
 
 #Cbar[stype=decl,type=reg] -> Comp IP[+TNS]
 #Cbar[stype=decl,type=doubt] -> IN IP[+TNS]

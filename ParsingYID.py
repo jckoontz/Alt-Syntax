@@ -28,8 +28,8 @@ def main(tokens):
         if result:
             for x in result:
                 print(x)
-        #else:
-            #print("*", " ".join(tokens))
+        else:
+            print("*", " ".join(tokens))
 
 
 if __name__=="__main__":

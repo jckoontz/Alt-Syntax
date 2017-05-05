@@ -1,0 +1,764 @@
+
+oyb ikh zol zayn a malke ikh volt veln az du zolst farbeygn
+
+
+|[]............| [0:1] 'oyb'
+|.[]...........| [1:2] 'ikh'
+|..[]..........| [2:3] 'zol'
+|...[].........| [3:4] 'zayn'
+|....[]........| [4:5] 'a'
+|.....[].......| [5:6] 'malke'
+|......[]......| [6:7] 'ikh'
+|.......[].....| [7:8] 'volt'
+|........[]....| [8:9] 'veln'
+|.........[]...| [9:10] 'az'
+|..........[]..| [10:11] 'du'
+|...........[].| [11:12] 'zolst'
+|............[]| [12:13] 'farbeygn'
+|[]............| [0:1] If[] -> 'oyb' *
+|[>............| [0:1] IP[asp=?a, mood=?m, tns=?t] -> If[] * DP[case='nom', num=?n, pers=?p] VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns='cond'] IP[tns='cond'] {}
+|[>............| [0:1] IP[asp=?a, mood='subj', tns=?t] -> If[] * DP[case='nom', num=?n, pers=?p] VP[asp=?a, conj='fin', mood='subj', num=?n, pers=?p, tns=?t] IP[tns='cond'] {}
+|.[]...........| [1:2] D[+DEF, case='nom', num='sg', pers=1, type='pron'] -> 'ikh' *
+|.[]...........| [1:2] Dbar[case='nom', num='sg', pers=1, type='pron'] -> D[COUNT=?c, +DEF, case='nom', num='sg', pers=1] *
+|.[]...........| [1:2] DP[case='nom', num='sg', pers=1] -> Dbar[COUNT=?c, DEF=?d, case='nom', num='sg', pers=1] *
+|.[>...........| [1:2] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?n: 'sg', ?p: 1}
+|[->...........| [0:2] IP[asp=?a, mood=?m, tns=?t] -> If[] DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns='cond'] IP[tns='cond'] {?n: 'sg', ?p: 1}
+|[->...........| [0:2] IP[asp=?a, mood='subj', tns=?t] -> If[] DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood='subj', num=?n, pers=?p, tns=?t] IP[tns='cond'] {?n: 'sg', ?p: 1}
+|..[]..........| [2:3] MOD[asp='simple', conj='fin', mood='subj', num='sg', pers=1, tns='pres'] -> 'zol' *
+|..[]..........| [2:3] MOD[asp='simple', conj='fin', mood='subj', num='sg', pers=3, tns='pres'] -> 'zol' *
+|..[>..........| [2:3] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 3, ?pres: 'subj', ?t: 'pres'}
+|..[>..........| [2:3] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 3, ?past: 'subj', ?t: 'pres'}
+|..[>..........| [2:3] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'subj', ?n: 'sg', ?p: 3, ?simple: 'simple', ?t: 'pres'}
+|..[>..........| [2:3] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 1, ?pres: 'subj', ?t: 'pres'}
+|..[>..........| [2:3] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 1, ?past: 'subj', ?t: 'pres'}
+|..[>..........| [2:3] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'subj', ?n: 'sg', ?p: 1, ?simple: 'simple', ?t: 'pres'}
+|...[].........| [3:4] AUX[conj='inf', tns='past', type='state'] -> 'zayn' *
+|...[].........| [3:4] V[conj='inf', num='none', pers='none', val=1] -> 'zayn' *
+|...[>.........| [3:4] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, sem='volition', tns=?t, type=?y, val=1] * IP[mood='subj'] {?j: 'inf', ?n: 'none', ?p: 'none'}
+|...[>.........| [3:4] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * DP[] {?j: 'inf', ?n: 'none', ?p: 'none'}
+|...[>.........| [3:4] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * VP[mood=?m, num=?n, pers=?p, tns=?t] {?j: 'inf', ?n: 'none', ?p: 'none'}
+|...[>.........| [3:4] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, val=?v] -> AUX[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y] * VP[conj='part', type=?y, val=?v] {?j: 'inf', ?t: 'past', ?y: 'state'}
+|....[]........| [4:5] D[def='indef', num='sg', type='art'] -> 'a' *
+|....[>........| [4:5] Dbar[case=?k, num=?n, pers=?p] -> D[num=?n, pers=?p, type='art'] * NP[COUNT=?c, DEF=?d, case=?k, num=?n, pers=?p] {?n: 'sg'}
+|....[]........| [4:5] Dbar[case=?k, num='sg', pers=?p, type='pron'] -> D[COUNT=?c, DEF=?d, case=?k, num='sg', pers=?p] *
+|....[]........| [4:5] DP[case=?k, num='sg', pers=?p] -> Dbar[COUNT=?c, DEF=?d, case=?k, num='sg', pers=?p] *
+|....[>........| [4:5] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?k2: 'nom', ?n: 'sg', ?p2: Variable('?p')}
+|...[-]........| [3:5] VP[asp='simple', conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=?v] -> V[conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=1] DP[] *
+|...[-]........| [3:5] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num='none', pers='none', tns=?t, type=?t] *
+|..[--]........| [2:5] VP[asp=?a, conj='fin', mood='subj', num='sg', pers=3, tns='pres'] -> MOD[asp='simple', conj='fin', mood='subj', num='sg', pers=3, tns='pres'] VP[conj='inf'] *
+|..[--]........| [2:5] VP[asp=?a, conj='fin', mood='subj', num='sg', pers=1, tns='pres'] -> MOD[asp='simple', conj='fin', mood='subj', num='sg', pers=1, tns='pres'] VP[conj='inf'] *
+|.[---]........| [1:5] IP[asp=?a, mood='subj', tns='pres'] -> DP[case='nom', num='sg', pers=1] VP[asp=?a, conj='fin', mood='subj', num='sg', pers=1, tns='pres'] *
+|[---->........| [0:5] IP[asp=?a, mood='subj', tns=?t] -> If[] DP[case='nom', num=?n, pers=?p] VP[asp=?a, conj='fin', mood='subj', num=?n, pers=?p, tns=?t] * IP[tns='cond'] {?a2: Variable('?a'), ?n: 'sg', ?p: 1, ?t: 'pres'}
+|.[---]........| [1:5] Cbar[] -> IP[] *
+|.[---]........| [1:5] CP[] -> Cbar[] *
+|...[-]........| [3:5] Cbar[] -> IP[] *
+|...[-]........| [3:5] CP[] -> Cbar[] *
+|.....[].......| [5:6] N[NUM='sg', gen='f'] -> 'malke' *
+|.....[].......| [5:6] NP[case=?k, num=?n, pers=?p] -> N[case=?k, num=?n, pers=?p] *
+|.....[].......| [5:6] Dbar[case=?k, num=?n, pers=?p] -> NP[DEF=?d, case=?k, num=?n, pers=?p] *
+|....[-].......| [4:6] Dbar[case=?k, num='sg', pers=?p] -> D[num='sg', pers=?p, type='art'] NP[COUNT=?c, DEF=?d, case=?k, num='sg', pers=?p] *
+|....[-].......| [4:6] DP[case=?k, num='sg', pers=?p] -> Dbar[COUNT=?c, DEF=?d, case=?k, num='sg', pers=?p] *
+|....[->.......| [4:6] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?k2: 'nom', ?n: 'sg', ?p2: Variable('?p')}
+|...[--].......| [3:6] VP[asp='simple', conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=?v] -> V[conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=1] DP[] *
+|...[--].......| [3:6] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num='none', pers='none', tns=?t, type=?t] *
+|..[---].......| [2:6] VP[asp=?a, conj='fin', mood='subj', num='sg', pers=3, tns='pres'] -> MOD[asp='simple', conj='fin', mood='subj', num='sg', pers=3, tns='pres'] VP[conj='inf'] *
+|..[---].......| [2:6] VP[asp=?a, conj='fin', mood='subj', num='sg', pers=1, tns='pres'] -> MOD[asp='simple', conj='fin', mood='subj', num='sg', pers=1, tns='pres'] VP[conj='inf'] *
+|.[----].......| [1:6] IP[asp=?a, mood='subj', tns='pres'] -> DP[case='nom', num='sg', pers=1] VP[asp=?a, conj='fin', mood='subj', num='sg', pers=1, tns='pres'] *
+|[----->.......| [0:6] IP[asp=?a, mood='subj', tns=?t] -> If[] DP[case='nom', num=?n, pers=?p] VP[asp=?a, conj='fin', mood='subj', num=?n, pers=?p, tns=?t] * IP[tns='cond'] {?a2: Variable('?a'), ?n: 'sg', ?p: 1, ?t: 'pres'}
+|.[----].......| [1:6] Cbar[] -> IP[] *
+|.[----].......| [1:6] CP[] -> Cbar[] *
+|...[--].......| [3:6] Cbar[] -> IP[] *
+|...[--].......| [3:6] CP[] -> Cbar[] *
+|.....[].......| [5:6] DP[case=?k, num=?n, pers=?p] -> Dbar[COUNT=?c, DEF=?d, case=?k, num=?n, pers=?p] *
+|.....[>.......| [5:6] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?k2: 'nom', ?n2: Variable('?n'), ?p2: Variable('?p')}
+|......[]......| [6:7] D[+DEF, case='nom', num='sg', pers=1, type='pron'] -> 'ikh' *
+|......[]......| [6:7] Dbar[case='nom', num='sg', pers=1, type='pron'] -> D[COUNT=?c, +DEF, case='nom', num='sg', pers=1] *
+|......[]......| [6:7] DP[case='nom', num='sg', pers=1] -> Dbar[COUNT=?c, DEF=?d, case='nom', num='sg', pers=1] *
+|......[>......| [6:7] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?n: 'sg', ?p: 1}
+|.......[].....| [7:8] MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=1, tns='cond'] -> 'volt' *
+|.......[].....| [7:8] MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=3, tns='cond'] -> 'volt' *
+|.......[].....| [7:8] MOD[asp='simple', conj='fin', mood='indic', num='pl', pers=2, tns='cond'] -> 'volt' *
+|.......[>.....| [7:8] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'pl', ?p: 2, ?pres: 'indic', ?t: 'cond'}
+|.......[>.....| [7:8] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'pl', ?p: 2, ?past: 'indic', ?t: 'cond'}
+|.......[>.....| [7:8] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 2, ?simple: 'simple', ?t: 'cond'}
+|.......[>.....| [7:8] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 3, ?pres: 'indic', ?t: 'cond'}
+|.......[>.....| [7:8] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 3, ?past: 'indic', ?t: 'cond'}
+|.......[>.....| [7:8] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'indic', ?n: 'sg', ?p: 3, ?simple: 'simple', ?t: 'cond'}
+|.......[>.....| [7:8] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 1, ?pres: 'indic', ?t: 'cond'}
+|.......[>.....| [7:8] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 1, ?past: 'indic', ?t: 'cond'}
+|.......[>.....| [7:8] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'indic', ?n: 'sg', ?p: 1, ?simple: 'simple', ?t: 'cond'}
+|........[]....| [8:9] MOD[asp='simple', conj='inf', mood='indic', tns='present', val=1, +volition] -> 'veln' *
+|........[]....| [8:9] MOD[asp='simple', conj='fin', mood='indic', num='pl', pers=1, tns='fut', val=1] -> 'veln' *
+|........[]....| [8:9] MOD[asp='simple', conj='fin', mood='indic', num='pl', pers=3, tns='fut', val=0] -> 'veln' *
+|........[>....| [8:9] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'pl', ?p: 3, ?pres: 'indic', ?t: 'fut'}
+|........[>....| [8:9] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'pl', ?p: 3, ?past: 'indic', ?t: 'fut'}
+|........[>....| [8:9] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 3, ?simple: 'simple', ?t: 'fut'}
+|........[>....| [8:9] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'pl', ?p: 1, ?pres: 'indic', ?t: 'fut'}
+|........[>....| [8:9] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'pl', ?p: 1, ?past: 'indic', ?t: 'fut'}
+|........[>....| [8:9] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 1, ?simple: 'simple', ?t: 'fut'}
+|........[>....| [8:9] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'inf', ?pres: 'indic', ?t: 'present'}
+|........[>....| [8:9] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'inf', ?past: 'indic', ?t: 'present'}
+|........[>....| [8:9] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'inf', ?m: 'indic', ?simple: 'simple', ?t: 'present'}
+|.........[]...| [9:10] Conj[] -> 'az' *
+|.........[>...| [9:10] IP[asp=?a, mood=?m, tns=?t] -> Conj[] * DP[case='nom', num=?n, pers=?p] VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {}
+|..........[]..| [10:11] D[+DEF, case='nom', num='sg', pers=2, type='pron'] -> 'du' *
+|..........[]..| [10:11] Dbar[case='nom', num='sg', pers=2, type='pron'] -> D[COUNT=?c, +DEF, case='nom', num='sg', pers=2] *
+|..........[]..| [10:11] DP[case='nom', num='sg', pers=2] -> Dbar[COUNT=?c, DEF=?d, case='nom', num='sg', pers=2] *
+|..........[>..| [10:11] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?n: 'sg', ?p: 2}
+|.........[->..| [9:11] IP[asp=?a, mood=?m, tns=?t] -> Conj[] DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?n: 'sg', ?p: 2}
+|...........[].| [11:12] MOD[asp='simple', conj='fin', mood='subj', num='sg', pers=2, tns='pres'] -> 'zolst' *
+|...........[>.| [11:12] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 2, ?pres: 'subj', ?t: 'pres'}
+|...........[>.| [11:12] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 2, ?past: 'subj', ?t: 'pres'}
+|...........[>.| [11:12] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'subj', ?n: 'sg', ?p: 2, ?simple: 'simple', ?t: 'pres'}
+|............[]| [12:13] V[conj='inf', num='none', pers='none', val=0] -> 'farbeygn' *
+|............[]| [12:13] V[conj='fin', mood='indic', num='pl', pers=1, tns='pres', val=0] -> 'farbeygn' *
+|............[]| [12:13] V[conj='fin', mood='indic', num='pl', pers=3, tns='pres', val=0] -> 'farbeygn' *
+|............[]| [12:13] VP[asp='simple', conj='fin', mood='indic', num='pl', pers=3, tns='pres', type=?y, val=0] -> V[conj='fin', mood='indic', num='pl', pers=3, tns='pres', type=?y, val=0] *
+|............[]| [12:13] VP[asp='simple', conj='fin', mood='indic', num='pl', pers=1, tns='pres', type=?y, val=0] -> V[conj='fin', mood='indic', num='pl', pers=1, tns='pres', type=?y, val=0] *
+|............[]| [12:13] VP[asp='simple', conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=0] -> V[conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=0] *
+|............[]| [12:13] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num='none', pers='none', tns=?t, type=?t] *
+|...........[-]| [11:13] VP[asp=?a, conj='fin', mood='subj', num='sg', pers=2, tns='pres'] -> MOD[asp='simple', conj='fin', mood='subj', num='sg', pers=2, tns='pres'] VP[conj='inf'] *
+|..........[--]| [10:13] IP[asp=?a, mood='subj', tns='pres'] -> DP[case='nom', num='sg', pers=2] VP[asp=?a, conj='fin', mood='subj', num='sg', pers=2, tns='pres'] *
+|.........[---]| [9:13] IP[asp=?a, mood='subj', tns='pres'] -> Conj[] DP[case='nom', num='sg', pers=2] VP[asp=?a, conj='fin', mood='subj', num='sg', pers=2, tns='pres'] *
+|.........[---]| [9:13] Cbar[] -> IP[] *
+|........[----]| [8:13] VP[asp='simple', conj='fin', mood=?m, num='pl', pers=3, tns='fut'] -> MOD[asp='simple', conj='fin', mood='indic', num='pl', pers=3, tns='fut', +volition] IP[mood='subj', val=?v] *
+|........[----]| [8:13] VP[asp='simple', conj='fin', mood=?m, num='pl', pers=1, tns='fut'] -> MOD[asp='simple', conj='fin', mood='indic', num='pl', pers=1, tns='fut', +volition] IP[mood='subj', val=?v] *
+|........[----]| [8:13] VP[asp='simple', conj='inf', mood=?m, num=?n, pers=?p, tns='present'] -> MOD[asp='simple', conj='inf', mood='indic', num=?n, pers=?p, tns='present', +volition] IP[mood='subj', val=?v] *
+|........[----]| [8:13] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num=?n, pers=?p, tns='present', type='present'] *
+|.......[-----]| [7:13] VP[asp=?a, conj='fin', mood='indic', num='pl', pers=2, tns='cond'] -> MOD[asp='simple', conj='fin', mood='indic', num='pl', pers=2, tns='cond'] VP[conj='inf'] *
+|.......[-----]| [7:13] VP[asp=?a, conj='fin', mood='indic', num='sg', pers=3, tns='cond'] -> MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=3, tns='cond'] VP[conj='inf'] *
+|.......[-----]| [7:13] VP[asp=?a, conj='fin', mood='indic', num='sg', pers=1, tns='cond'] -> MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=1, tns='cond'] VP[conj='inf'] *
+|......[------]| [6:13] IP[asp=?a, mood='indic', tns='cond'] -> DP[case='nom', num='sg', pers=1] VP[asp=?a, conj='fin', mood='indic', num='sg', pers=1, tns='cond'] *
+|......[------]| [6:13] Cbar[] -> IP[] *
+|......[------>| [6:13] IP[asp=?a, mood='indic', tns='cond'] -> IP[tns='cond'] * If[] DP[case='nom', num=?n, pers=?p] VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns='cond'] {}
+|[============]| [0:13] IP[asp=?a, mood='subj', tns='pres'] -> If[] DP[case='nom', num='sg', pers=1] VP[asp=?a, conj='fin', mood='subj', num='sg', pers=1, tns='pres'] IP[tns='cond'] *
+|[============]| [0:13] Cbar[] -> IP[] *
+|[============]| [0:13] CP[] -> Cbar[] *
+|......[------]| [6:13] CP[] -> Cbar[] *
+|........[----]| [8:13] Cbar[] -> IP[] *
+|........[----]| [8:13] CP[] -> Cbar[] *
+|........[----]| [8:13] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num='pl', pers=1, tns='fut', type='fut'] *
+|........[----]| [8:13] Cbar[] -> IP[] *
+|........[----]| [8:13] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num='pl', pers=3, tns='fut', type='fut'] *
+|........[----]| [8:13] Cbar[] -> IP[] *
+|.........[---]| [9:13] CP[] -> Cbar[] *
+|..........[--]| [10:13] Cbar[] -> IP[] *
+|..........[--]| [10:13] CP[] -> Cbar[] *
+|............[]| [12:13] Cbar[] -> IP[] *
+|............[]| [12:13] CP[] -> Cbar[] *
+(CP[]
+  (Cbar[]
+    (IP[asp=?a, mood='subj', tns='pres']
+      (If[] oyb)
+      (DP[case='nom', num='sg', pers=1]
+        (Dbar[case='nom', num='sg', pers=1, type='pron']
+          (D[+DEF, case='nom', num='sg', pers=1, type='pron'] ikh)))
+      (VP[asp=?a, conj='fin', mood='subj', num='sg', pers=1, tns='pres']
+        (MOD[asp='simple', conj='fin', mood='subj', num='sg', pers=1, tns='pres']
+          zol)
+        (VP[asp='simple', conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=?v]
+          (V[conj='inf', num='none', pers='none', val=1] zayn)
+          (DP[case=?k, num='sg', pers=?p]
+            (Dbar[case=?k, num='sg', pers=?p]
+              (D[def='indef', num='sg', type='art'] a)
+              (NP[case=?k, num=?n, pers=?p]
+                (N[NUM='sg', gen='f'] malke))))))
+      (IP[asp=?a, mood='indic', tns='cond']
+        (DP[case='nom', num='sg', pers=1]
+          (Dbar[case='nom', num='sg', pers=1, type='pron']
+            (D[+DEF, case='nom', num='sg', pers=1, type='pron'] ikh)))
+        (VP[asp=?a, conj='fin', mood='indic', num='sg', pers=1, tns='cond']
+          (MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=1, tns='cond']
+            volt)
+          (VP[asp='simple', conj='inf', mood=?m, num=?n, pers=?p, tns='present']
+            (MOD[asp='simple', conj='inf', mood='indic', tns='present', val=1, +volition]
+              veln)
+            (IP[asp=?a, mood='subj', tns='pres']
+              (Conj[] az)
+              (DP[case='nom', num='sg', pers=2]
+                (Dbar[case='nom', num='sg', pers=2, type='pron']
+                  (D[+DEF, case='nom', num='sg', pers=2, type='pron']
+                    du)))
+              (VP[asp=?a, conj='fin', mood='subj', num='sg', pers=2, tns='pres']
+                (MOD[asp='simple', conj='fin', mood='subj', num='sg', pers=2, tns='pres']
+                  zolst)
+                (VP[asp='simple', conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=0]
+                  (V[conj='inf', num='none', pers='none', val=0]
+                    farbeygn))))))))))
+
+
+
+mir flegn zingn lider
+
+|.mir.fle.zin.lid.|
+|[---]   .   .   .| [0:1] 'mir'
+|.   [---]   .   .| [1:2] 'flegn'
+|.   .   [---]   .| [2:3] 'zingn'
+|.   .   .   [---]| [3:4] 'lider'
+|[---]   .   .   .| [0:1] D[+DEF, case='nom', num='pl', pers=1, type='pron'] -> 'mir' *
+|[---]   .   .   .| [0:1] Dbar[case='nom', num='pl', pers=1, type='pron'] -> D[COUNT=?c, +DEF, case='nom', num='pl', pers=1] *
+|[---]   .   .   .| [0:1] DP[case='nom', num='pl', pers=1] -> Dbar[COUNT=?c, DEF=?d, case='nom', num='pl', pers=1] *
+|[--->   .   .   .| [0:1] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?n: 'pl', ?p: 1}
+|.   [---]   .   .| [1:2] MOD[asp='habitual', conj='inf', tns='past'] -> 'flegn' *
+|.   [---]   .   .| [1:2] MOD[asp='habitual', conj='fin', mood='indic', num='pl', pers=1, tns='past'] -> 'flegn' *
+|.   [---]   .   .| [1:2] MOD[asp='habitual', conj='fin', mood='indic', num='pl', pers=3, tns='past'] -> 'flegn' *
+|.   [--->   .   .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'habitual', ?j: 'fin', ?n: 'pl', ?p: 3, ?pres: 'indic', ?t: 'past'}
+|.   [--->   .   .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'habitual', ?j: 'fin', ?n: 'pl', ?p: 3, ?past: 'indic', ?t: 'past'}
+|.   [--->   .   .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 3, ?simple: 'habitual', ?t: 'past'}
+|.   [--->   .   .| [1:2] VP[asp='habitual', conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp='habitual', conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='part'] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 3, ?t: 'past'}
+|.   [--->   .   .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'habitual', ?j: 'fin', ?n: 'pl', ?p: 1, ?pres: 'indic', ?t: 'past'}
+|.   [--->   .   .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'habitual', ?j: 'fin', ?n: 'pl', ?p: 1, ?past: 'indic', ?t: 'past'}
+|.   [--->   .   .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 1, ?simple: 'habitual', ?t: 'past'}
+|.   [--->   .   .| [1:2] VP[asp='habitual', conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp='habitual', conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='part'] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 1, ?t: 'past'}
+|.   [--->   .   .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'habitual', ?j: 'inf', ?t: 'past'}
+|.   [--->   .   .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'habitual', ?j: 'inf', ?t: 'past'}
+|.   [--->   .   .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'inf', ?simple: 'habitual', ?t: 'past'}
+|.   [--->   .   .| [1:2] VP[asp='habitual', conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp='habitual', conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='part'] {?j: 'inf', ?t: 'past'}
+|.   .   [---]   .| [2:3] V[conj='inf', num='none', pers='none', val=0] -> 'zingn' *
+|.   .   [---]   .| [2:3] V[conj='fin', mood='indic', num='pl', pers=1, tns='pres', val=0] -> 'zingn' *
+|.   .   [---]   .| [2:3] V[conj='fin', mood='indic', num='pl', pers=3, tns='pres', val=0] -> 'zingn' *
+|.   .   [---]   .| [2:3] V[conj='inf', num='none', pers='none', val=1] -> 'zingn' *
+|.   .   [---]   .| [2:3] V[conj='fin', mood='indic', num='pl', pers=1, tns='pres', val=1] -> 'zingn' *
+|.   .   [--->   .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, sem='volition', tns=?t, type=?y, val=1] * IP[mood='subj'] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 1, ?t: 'pres'}
+|.   .   [--->   .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * DP[] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 1, ?t: 'pres'}
+|.   .   [--->   .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * VP[mood=?m, num=?n, pers=?p, tns=?t] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 1, ?t: 'pres'}
+|.   .   [--->   .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, sem='volition', tns=?t, type=?y, val=1] * IP[mood='subj'] {?j: 'inf', ?n: 'none', ?p: 'none'}
+|.   .   [--->   .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * DP[] {?j: 'inf', ?n: 'none', ?p: 'none'}
+|.   .   [--->   .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * VP[mood=?m, num=?n, pers=?p, tns=?t] {?j: 'inf', ?n: 'none', ?p: 'none'}
+|.   .   [---]   .| [2:3] VP[asp='simple', conj='fin', mood='indic', num='pl', pers=3, tns='pres', type=?y, val=0] -> V[conj='fin', mood='indic', num='pl', pers=3, tns='pres', type=?y, val=0] *
+|.   .   [---]   .| [2:3] VP[asp='simple', conj='fin', mood='indic', num='pl', pers=1, tns='pres', type=?y, val=0] -> V[conj='fin', mood='indic', num='pl', pers=1, tns='pres', type=?y, val=0] *
+|.   .   [---]   .| [2:3] VP[asp='simple', conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=0] -> V[conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=0] *
+|.   .   [---]   .| [2:3] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num='none', pers='none', tns=?t, type=?t] *
+|.   [-------]   .| [1:3] VP[asp=?a, conj='fin', mood='indic', num='pl', pers=3, tns='past'] -> MOD[asp='habitual', conj='fin', mood='indic', num='pl', pers=3, tns='past'] VP[conj='inf'] *
+|.   [-------]   .| [1:3] VP[asp=?a, conj='fin', mood='indic', num='pl', pers=1, tns='past'] -> MOD[asp='habitual', conj='fin', mood='indic', num='pl', pers=1, tns='past'] VP[conj='inf'] *
+|.   [-------]   .| [1:3] VP[asp=?a, conj='inf', mood=?m, num=?n, pers=?p, tns='past'] -> MOD[asp='habitual', conj='inf', mood=?m, num=?n, pers=?p, tns='past'] VP[conj='inf'] *
+|.   [-------]   .| [1:3] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num=?n, pers=?p, tns='past', type='past'] *
+|.   [-------]   .| [1:3] Cbar[] -> IP[] *
+|.   [-------]   .| [1:3] CP[] -> Cbar[] *
+|[-----------]   .| [0:3] IP[asp=?a, mood='indic', tns='past'] -> DP[case='nom', num='pl', pers=1] VP[asp=?a, conj='fin', mood='indic', num='pl', pers=1, tns='past'] *
+|[-----------]   .| [0:3] Cbar[] -> IP[] *
+|[-----------]   .| [0:3] CP[] -> Cbar[] *
+|.   .   [---]   .| [2:3] Cbar[] -> IP[] *
+|.   .   [---]   .| [2:3] CP[] -> Cbar[] *
+|.   .   .   [---]| [3:4] N[NUM='pl'] -> 'lider' *
+|.   .   .   [---]| [3:4] NP[case=?k, num=?n, pers=?p] -> N[case=?k, num=?n, pers=?p] *
+|.   .   .   [---]| [3:4] Dbar[case=?k, num=?n, pers=?p] -> NP[DEF=?d, case=?k, num=?n, pers=?p] *
+|.   .   .   [---]| [3:4] DP[case=?k, num=?n, pers=?p] -> Dbar[COUNT=?c, DEF=?d, case=?k, num=?n, pers=?p] *
+|.   .   .   [--->| [3:4] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?k2: 'nom', ?n2: Variable('?n'), ?p2: Variable('?p')}
+|.   .   [-------]| [2:4] VP[asp='simple', conj='fin', mood='indic', num='pl', pers=1, tns='pres', type=?y, val=?v] -> V[conj='fin', mood='indic', num='pl', pers=1, tns='pres', type=?y, val=1] DP[] *
+|.   .   [-------]| [2:4] VP[asp='simple', conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=?v] -> V[conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=1] DP[] *
+|.   .   [-------]| [2:4] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num='none', pers='none', tns=?t, type=?t] *
+|.   [-----------]| [1:4] VP[asp=?a, conj='fin', mood='indic', num='pl', pers=3, tns='past'] -> MOD[asp='habitual', conj='fin', mood='indic', num='pl', pers=3, tns='past'] VP[conj='inf'] *
+|.   [-----------]| [1:4] VP[asp=?a, conj='fin', mood='indic', num='pl', pers=1, tns='past'] -> MOD[asp='habitual', conj='fin', mood='indic', num='pl', pers=1, tns='past'] VP[conj='inf'] *
+|.   [-----------]| [1:4] VP[asp=?a, conj='inf', mood=?m, num=?n, pers=?p, tns='past'] -> MOD[asp='habitual', conj='inf', mood=?m, num=?n, pers=?p, tns='past'] VP[conj='inf'] *
+|.   [-----------]| [1:4] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num=?n, pers=?p, tns='past', type='past'] *
+|.   [-----------]| [1:4] Cbar[] -> IP[] *
+|.   [-----------]| [1:4] CP[] -> Cbar[] *
+|[===============]| [0:4] IP[asp=?a, mood='indic', tns='past'] -> DP[case='nom', num='pl', pers=1] VP[asp=?a, conj='fin', mood='indic', num='pl', pers=1, tns='past'] *
+|[===============]| [0:4] Cbar[] -> IP[] *
+|[===============]| [0:4] CP[] -> Cbar[] *
+|.   .   [-------]| [2:4] Cbar[] -> IP[] *
+|.   .   [-------]| [2:4] CP[] -> Cbar[] *
+(CP[]
+  (Cbar[]
+    (IP[asp=?a, mood='indic', tns='past']
+      (DP[case='nom', num='pl', pers=1]
+        (Dbar[case='nom', num='pl', pers=1, type='pron']
+          (D[+DEF, case='nom', num='pl', pers=1, type='pron'] mir)))
+      (VP[asp=?a, conj='fin', mood='indic', num='pl', pers=1, tns='past']
+        (MOD[asp='habitual', conj='fin', mood='indic', num='pl', pers=1, tns='past']
+          flegn)
+        (VP[asp='simple', conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=?v]
+          (V[conj='inf', num='none', pers='none', val=1] zingn)
+          (DP[case=?k, num=?n, pers=?p]
+            (Dbar[case=?k, num=?n, pers=?p]
+              (NP[case=?k, num=?n, pers=?p] (N[NUM='pl'] lider)))))))))
+
+
+
+tants
+
+|.  tants  .|
+|[=========]| [0:1] 'tants'
+|[=========]| [0:1] V[conj='fin', mood='indic', num='sg', pers=1, tns='pres', val=0] -> 'tants' *
+|[=========]| [0:1] V[conj='fin', mood='imper', num='sg', val=0] -> 'tants' *
+|[=========]| [0:1] VP[asp='simple', conj='fin', mood='imper', num='sg', pers=?p, tns=?t, type=?y, val=0] -> V[conj='fin', mood='imper', num='sg', pers=?p, tns=?t, type=?y, val=0] *
+|[=========]| [0:1] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num='sg', pers=?p, tns=?t, type=?t] *
+|[=========]| [0:1] Cbar[] -> IP[] *
+|[=========]| [0:1] CP[] -> Cbar[] *
+|[=========]| [0:1] VP[asp='simple', conj='fin', mood='indic', num='sg', pers=1, tns='pres', type=?y, val=0] -> V[conj='fin', mood='indic', num='sg', pers=1, tns='pres', type=?y, val=0] *
+(CP[]
+  (Cbar[]
+    (IP[asp='simple', mood='imper', tns='pres']
+      (VP[asp='simple', conj='fin', mood='imper', num='sg', pers=?p, tns=?t, type=?y, val=0]
+        (V[conj='fin', mood='imper', num='sg', val=0] tants)))))
+
+
+
+er fleg gevolt du zolst shraybn a bukh
+
+|.e.f.g.d.z.s.a.b.|
+|[-] . . . . . . .| [0:1] 'er'
+|. [-] . . . . . .| [1:2] 'fleg'
+|. . [-] . . . . .| [2:3] 'gevolt'
+|. . . [-] . . . .| [3:4] 'du'
+|. . . . [-] . . .| [4:5] 'zolst'
+|. . . . . [-] . .| [5:6] 'shraybn'
+|. . . . . . [-] .| [6:7] 'a'
+|. . . . . . . [-]| [7:8] 'bukh'
+|[-] . . . . . . .| [0:1] D[+DEF, case='nom', gen='m', num='sg', pers=3, type='pron'] -> 'er' *
+|[-] . . . . . . .| [0:1] Dbar[case='nom', num='sg', pers=3, type='pron'] -> D[COUNT=?c, +DEF, case='nom', num='sg', pers=3] *
+|[-] . . . . . . .| [0:1] DP[case='nom', num='sg', pers=3] -> Dbar[COUNT=?c, DEF=?d, case='nom', num='sg', pers=3] *
+|[-> . . . . . . .| [0:1] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?n: 'sg', ?p: 3}
+|. [-] . . . . . .| [1:2] MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=1, tns='past'] -> 'fleg' *
+|. [-] . . . . . .| [1:2] MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past'] -> 'fleg' *
+|. [-> . . . . . .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'habitual', ?j: 'fin', ?n: 'sg', ?p: 3, ?pres: 'indic', ?t: 'past'}
+|. [-> . . . . . .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'habitual', ?j: 'fin', ?n: 'sg', ?p: 3, ?past: 'indic', ?t: 'past'}
+|. [-> . . . . . .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'indic', ?n: 'sg', ?p: 3, ?simple: 'habitual', ?t: 'past'}
+|. [-> . . . . . .| [1:2] VP[asp='habitual', conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp='habitual', conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='part'] {?j: 'fin', ?m: 'indic', ?n: 'sg', ?p: 3, ?t: 'past'}
+|. [-> . . . . . .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'habitual', ?j: 'fin', ?n: 'sg', ?p: 1, ?pres: 'indic', ?t: 'past'}
+|. [-> . . . . . .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'habitual', ?j: 'fin', ?n: 'sg', ?p: 1, ?past: 'indic', ?t: 'past'}
+|. [-> . . . . . .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'indic', ?n: 'sg', ?p: 1, ?simple: 'habitual', ?t: 'past'}
+|. [-> . . . . . .| [1:2] VP[asp='habitual', conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp='habitual', conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='part'] {?j: 'fin', ?m: 'indic', ?n: 'sg', ?p: 1, ?t: 'past'}
+|. . [-] . . . . .| [2:3] MOD[asp='simple', conj='part', mood='none', val=1, +volition] -> 'gevolt' *
+|. . [-] . . . . .| [2:3] MOD[asp='simple', conj='part', mood='none', tns='cond', val=1] -> 'gevolt' *
+|. . [-> . . . . .| [2:3] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'part', ?pres: 'none', ?t: 'cond'}
+|. . [-> . . . . .| [2:3] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'part', ?past: 'none', ?t: 'cond'}
+|. . [-> . . . . .| [2:3] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'part', ?m: 'none', ?simple: 'simple', ?t: 'cond'}
+|. . [-> . . . . .| [2:3] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'part', ?pres: 'none'}
+|. . [-> . . . . .| [2:3] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'part', ?past: 'none'}
+|. . [-> . . . . .| [2:3] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'part', ?m: 'none', ?simple: 'simple'}
+|. . . [-] . . . .| [3:4] D[+DEF, case='nom', num='sg', pers=2, type='pron'] -> 'du' *
+|. . . [-] . . . .| [3:4] Dbar[case='nom', num='sg', pers=2, type='pron'] -> D[COUNT=?c, +DEF, case='nom', num='sg', pers=2] *
+|. . . [-] . . . .| [3:4] DP[case='nom', num='sg', pers=2] -> Dbar[COUNT=?c, DEF=?d, case='nom', num='sg', pers=2] *
+|. . . [-> . . . .| [3:4] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?n: 'sg', ?p: 2}
+|. . . . [-] . . .| [4:5] MOD[asp='simple', conj='fin', mood='subj', num='sg', pers=2, tns='pres'] -> 'zolst' *
+|. . . . [-> . . .| [4:5] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 2, ?pres: 'subj', ?t: 'pres'}
+|. . . . [-> . . .| [4:5] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 2, ?past: 'subj', ?t: 'pres'}
+|. . . . [-> . . .| [4:5] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'subj', ?n: 'sg', ?p: 2, ?simple: 'simple', ?t: 'pres'}
+|. . . . . [-] . .| [5:6] V[conj='inf', num='none', pers='none', val=0] -> 'shraybn' *
+|. . . . . [-] . .| [5:6] V[conj='fin', mood='indic', num='pl', pers=1, tns='pres', val=0] -> 'shraybn' *
+|. . . . . [-] . .| [5:6] V[conj='fin', mood='indic', num='pl', pers=3, tns='pres', val=0] -> 'shraybn' *
+|. . . . . [-] . .| [5:6] V[conj='inf', num='none', pers='none', val=1] -> 'shraybn' *
+|. . . . . [-] . .| [5:6] V[conj='fin', mood='indic', num='pl', pers=1, tns='pres', val=1] -> 'shraybn' *
+|. . . . . [-> . .| [5:6] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, sem='volition', tns=?t, type=?y, val=1] * IP[mood='subj'] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 1, ?t: 'pres'}
+|. . . . . [-> . .| [5:6] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * DP[] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 1, ?t: 'pres'}
+|. . . . . [-> . .| [5:6] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * VP[mood=?m, num=?n, pers=?p, tns=?t] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 1, ?t: 'pres'}
+|. . . . . [-> . .| [5:6] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, sem='volition', tns=?t, type=?y, val=1] * IP[mood='subj'] {?j: 'inf', ?n: 'none', ?p: 'none'}
+|. . . . . [-> . .| [5:6] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * DP[] {?j: 'inf', ?n: 'none', ?p: 'none'}
+|. . . . . [-> . .| [5:6] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * VP[mood=?m, num=?n, pers=?p, tns=?t] {?j: 'inf', ?n: 'none', ?p: 'none'}
+|. . . . . [-] . .| [5:6] VP[asp='simple', conj='fin', mood='indic', num='pl', pers=3, tns='pres', type=?y, val=0] -> V[conj='fin', mood='indic', num='pl', pers=3, tns='pres', type=?y, val=0] *
+|. . . . . [-] . .| [5:6] VP[asp='simple', conj='fin', mood='indic', num='pl', pers=1, tns='pres', type=?y, val=0] -> V[conj='fin', mood='indic', num='pl', pers=1, tns='pres', type=?y, val=0] *
+|. . . . . [-] . .| [5:6] VP[asp='simple', conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=0] -> V[conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=0] *
+|. . . . . [-] . .| [5:6] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num='none', pers='none', tns=?t, type=?t] *
+|. . . . [---] . .| [4:6] VP[asp=?a, conj='fin', mood='subj', num='sg', pers=2, tns='pres'] -> MOD[asp='simple', conj='fin', mood='subj', num='sg', pers=2, tns='pres'] VP[conj='inf'] *
+|. . . [-----] . .| [3:6] IP[asp=?a, mood='subj', tns='pres'] -> DP[case='nom', num='sg', pers=2] VP[asp=?a, conj='fin', mood='subj', num='sg', pers=2, tns='pres'] *
+|. . . [-----] . .| [3:6] Cbar[] -> IP[] *
+|. . [-------] . .| [2:6] VP[asp='simple', conj='part', mood=?m, num=?n, pers=?p, tns='cond'] -> MOD[asp='simple', conj='part', mood='none', num=?n, pers=?p, tns='cond', +volition] IP[mood='subj', val=?v] *
+|. . [-------] . .| [2:6] VP[asp='simple', conj='part', mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp='simple', conj='part', mood='none', num=?n, pers=?p, tns=?t, +volition] IP[mood='subj', val=?v] *
+|. . [-------] . .| [2:6] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num=?n, pers=?p, tns=?t, type=?t] *
+|. [---------] . .| [1:6] VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past'] -> MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past'] VP[conj='part'] *
+|. [---------] . .| [1:6] VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=1, tns='past'] -> MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=1, tns='past'] VP[conj='part'] *
+|[-----------] . .| [0:6] IP[asp='habitual', mood='indic', tns='past'] -> DP[case='nom', num='sg', pers=3] VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past'] *
+|[-----------] . .| [0:6] Cbar[] -> IP[] *
+|[-----------] . .| [0:6] CP[] -> Cbar[] *
+|. . [-------] . .| [2:6] Cbar[] -> IP[] *
+|. . [-------] . .| [2:6] CP[] -> Cbar[] *
+|. . [-------] . .| [2:6] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num=?n, pers=?p, tns='cond', type='cond'] *
+|. [---------] . .| [1:6] VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past'] -> MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past'] VP[conj='part'] *
+|. [---------] . .| [1:6] VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=1, tns='past'] -> MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=1, tns='past'] VP[conj='part'] *
+|. . [-------] . .| [2:6] Cbar[] -> IP[] *
+|. . . [-----] . .| [3:6] CP[] -> Cbar[] *
+|. . . . . [-] . .| [5:6] Cbar[] -> IP[] *
+|. . . . . [-] . .| [5:6] CP[] -> Cbar[] *
+|. . . . . . [-] .| [6:7] D[def='indef', num='sg', type='art'] -> 'a' *
+|. . . . . . [-> .| [6:7] Dbar[case=?k, num=?n, pers=?p] -> D[num=?n, pers=?p, type='art'] * NP[COUNT=?c, DEF=?d, case=?k, num=?n, pers=?p] {?n: 'sg'}
+|. . . . . . [-] .| [6:7] Dbar[case=?k, num='sg', pers=?p, type='pron'] -> D[COUNT=?c, DEF=?d, case=?k, num='sg', pers=?p] *
+|. . . . . . [-] .| [6:7] DP[case=?k, num='sg', pers=?p] -> Dbar[COUNT=?c, DEF=?d, case=?k, num='sg', pers=?p] *
+|. . . . . . [-> .| [6:7] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?k2: 'nom', ?n: 'sg', ?p2: Variable('?p')}
+|. . . . . [---] .| [5:7] VP[asp='simple', conj='fin', mood='indic', num='pl', pers=1, tns='pres', type=?y, val=?v] -> V[conj='fin', mood='indic', num='pl', pers=1, tns='pres', type=?y, val=1] DP[] *
+|. . . . . [---] .| [5:7] VP[asp='simple', conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=?v] -> V[conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=1] DP[] *
+|. . . . . [---] .| [5:7] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num='none', pers='none', tns=?t, type=?t] *
+|. . . . [-----] .| [4:7] VP[asp=?a, conj='fin', mood='subj', num='sg', pers=2, tns='pres'] -> MOD[asp='simple', conj='fin', mood='subj', num='sg', pers=2, tns='pres'] VP[conj='inf'] *
+|. . . [-------] .| [3:7] IP[asp=?a, mood='subj', tns='pres'] -> DP[case='nom', num='sg', pers=2] VP[asp=?a, conj='fin', mood='subj', num='sg', pers=2, tns='pres'] *
+|. . . [-------] .| [3:7] Cbar[] -> IP[] *
+|. . [---------] .| [2:7] VP[asp='simple', conj='part', mood=?m, num=?n, pers=?p, tns='cond'] -> MOD[asp='simple', conj='part', mood='none', num=?n, pers=?p, tns='cond', +volition] IP[mood='subj', val=?v] *
+|. . [---------] .| [2:7] VP[asp='simple', conj='part', mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp='simple', conj='part', mood='none', num=?n, pers=?p, tns=?t, +volition] IP[mood='subj', val=?v] *
+|. . [---------] .| [2:7] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num=?n, pers=?p, tns=?t, type=?t] *
+|. [-----------] .| [1:7] VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past'] -> MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past'] VP[conj='part'] *
+|. [-----------] .| [1:7] VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=1, tns='past'] -> MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=1, tns='past'] VP[conj='part'] *
+|[-------------] .| [0:7] IP[asp='habitual', mood='indic', tns='past'] -> DP[case='nom', num='sg', pers=3] VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past'] *
+|[-------------] .| [0:7] Cbar[] -> IP[] *
+|[-------------] .| [0:7] CP[] -> Cbar[] *
+|. . [---------] .| [2:7] Cbar[] -> IP[] *
+|. . [---------] .| [2:7] CP[] -> Cbar[] *
+|. . [---------] .| [2:7] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num=?n, pers=?p, tns='cond', type='cond'] *
+|. [-----------] .| [1:7] VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past'] -> MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past'] VP[conj='part'] *
+|. [-----------] .| [1:7] VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=1, tns='past'] -> MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=1, tns='past'] VP[conj='part'] *
+|. . [---------] .| [2:7] Cbar[] -> IP[] *
+|. . . [-------] .| [3:7] CP[] -> Cbar[] *
+|. . . . . [---] .| [5:7] Cbar[] -> IP[] *
+|. . . . . [---] .| [5:7] CP[] -> Cbar[] *
+|. . . . . . . [-]| [7:8] N[NUM='sg', gen='n'] -> 'bukh' *
+|. . . . . . . [-]| [7:8] NP[case=?k, num=?n, pers=?p] -> N[case=?k, num=?n, pers=?p] *
+|. . . . . . . [-]| [7:8] Dbar[case=?k, num=?n, pers=?p] -> NP[DEF=?d, case=?k, num=?n, pers=?p] *
+|. . . . . . [---]| [6:8] Dbar[case=?k, num='sg', pers=?p] -> D[num='sg', pers=?p, type='art'] NP[COUNT=?c, DEF=?d, case=?k, num='sg', pers=?p] *
+|. . . . . . [---]| [6:8] DP[case=?k, num='sg', pers=?p] -> Dbar[COUNT=?c, DEF=?d, case=?k, num='sg', pers=?p] *
+|. . . . . . [--->| [6:8] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?k2: 'nom', ?n: 'sg', ?p2: Variable('?p')}
+|. . . . . [-----]| [5:8] VP[asp='simple', conj='fin', mood='indic', num='pl', pers=1, tns='pres', type=?y, val=?v] -> V[conj='fin', mood='indic', num='pl', pers=1, tns='pres', type=?y, val=1] DP[] *
+|. . . . . [-----]| [5:8] VP[asp='simple', conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=?v] -> V[conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=1] DP[] *
+|. . . . . [-----]| [5:8] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num='none', pers='none', tns=?t, type=?t] *
+|. . . . [-------]| [4:8] VP[asp=?a, conj='fin', mood='subj', num='sg', pers=2, tns='pres'] -> MOD[asp='simple', conj='fin', mood='subj', num='sg', pers=2, tns='pres'] VP[conj='inf'] *
+|. . . [---------]| [3:8] IP[asp=?a, mood='subj', tns='pres'] -> DP[case='nom', num='sg', pers=2] VP[asp=?a, conj='fin', mood='subj', num='sg', pers=2, tns='pres'] *
+|. . . [---------]| [3:8] Cbar[] -> IP[] *
+|. . [-----------]| [2:8] VP[asp='simple', conj='part', mood=?m, num=?n, pers=?p, tns='cond'] -> MOD[asp='simple', conj='part', mood='none', num=?n, pers=?p, tns='cond', +volition] IP[mood='subj', val=?v] *
+|. . [-----------]| [2:8] VP[asp='simple', conj='part', mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp='simple', conj='part', mood='none', num=?n, pers=?p, tns=?t, +volition] IP[mood='subj', val=?v] *
+|. . [-----------]| [2:8] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num=?n, pers=?p, tns=?t, type=?t] *
+|. [-------------]| [1:8] VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past'] -> MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past'] VP[conj='part'] *
+|. [-------------]| [1:8] VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=1, tns='past'] -> MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=1, tns='past'] VP[conj='part'] *
+|[===============]| [0:8] IP[asp='habitual', mood='indic', tns='past'] -> DP[case='nom', num='sg', pers=3] VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past'] *
+|[===============]| [0:8] Cbar[] -> IP[] *
+|[===============]| [0:8] CP[] -> Cbar[] *
+|. . [-----------]| [2:8] Cbar[] -> IP[] *
+|. . [-----------]| [2:8] CP[] -> Cbar[] *
+|. . [-----------]| [2:8] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num=?n, pers=?p, tns='cond', type='cond'] *
+|. [-------------]| [1:8] VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past'] -> MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past'] VP[conj='part'] *
+|. [-------------]| [1:8] VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=1, tns='past'] -> MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=1, tns='past'] VP[conj='part'] *
+|. . [-----------]| [2:8] Cbar[] -> IP[] *
+|. . . [---------]| [3:8] CP[] -> Cbar[] *
+|. . . . . [-----]| [5:8] Cbar[] -> IP[] *
+|. . . . . [-----]| [5:8] CP[] -> Cbar[] *
+|. . . . . . . [-]| [7:8] DP[case=?k, num=?n, pers=?p] -> Dbar[COUNT=?c, DEF=?d, case=?k, num=?n, pers=?p] *
+|. . . . . . . [->| [7:8] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?k2: 'nom', ?n2: Variable('?n'), ?p2: Variable('?p')}
+(CP[]
+  (Cbar[]
+    (IP[asp='habitual', mood='indic', tns='past']
+      (DP[case='nom', num='sg', pers=3]
+        (Dbar[case='nom', num='sg', pers=3, type='pron']
+          (D[+DEF, case='nom', gen='m', num='sg', pers=3, type='pron']
+            er)))
+      (VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past']
+        (MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past']
+          fleg)
+        (VP[asp='simple', conj='part', mood=?m, num=?n, pers=?p, tns=?t]
+          (MOD[asp='simple', conj='part', mood='none', val=1, +volition]
+            gevolt)
+          (IP[asp=?a, mood='subj', tns='pres']
+            (DP[case='nom', num='sg', pers=2]
+              (Dbar[case='nom', num='sg', pers=2, type='pron']
+                (D[+DEF, case='nom', num='sg', pers=2, type='pron']
+                  du)))
+            (VP[asp=?a, conj='fin', mood='subj', num='sg', pers=2, tns='pres']
+              (MOD[asp='simple', conj='fin', mood='subj', num='sg', pers=2, tns='pres']
+                zolst)
+              (VP[asp='simple', conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=?v]
+                (V[conj='inf', num='none', pers='none', val=1]
+                  shraybn)
+                (DP[case=?k, num='sg', pers=?p]
+                  (Dbar[case=?k, num='sg', pers=?p]
+                    (D[def='indef', num='sg', type='art'] a)
+                    (NP[case=?k, num=?n, pers=?p]
+                      (N[NUM='sg', gen='n'] bukh))))))))))))
+(CP[]
+  (Cbar[]
+    (IP[asp='habitual', mood='indic', tns='past']
+      (DP[case='nom', num='sg', pers=3]
+        (Dbar[case='nom', num='sg', pers=3, type='pron']
+          (D[+DEF, case='nom', gen='m', num='sg', pers=3, type='pron']
+            er)))
+      (VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past']
+        (MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=3, tns='past']
+          fleg)
+        (VP[asp='simple', conj='part', mood=?m, num=?n, pers=?p, tns='cond']
+          (MOD[asp='simple', conj='part', mood='none', tns='cond', val=1]
+            gevolt)
+          (IP[asp=?a, mood='subj', tns='pres']
+            (DP[case='nom', num='sg', pers=2]
+              (Dbar[case='nom', num='sg', pers=2, type='pron']
+                (D[+DEF, case='nom', num='sg', pers=2, type='pron']
+                  du)))
+            (VP[asp=?a, conj='fin', mood='subj', num='sg', pers=2, tns='pres']
+              (MOD[asp='simple', conj='fin', mood='subj', num='sg', pers=2, tns='pres']
+                zolst)
+              (VP[asp='simple', conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=?v]
+                (V[conj='inf', num='none', pers='none', val=1]
+                  shraybn)
+                (DP[case=?k, num='sg', pers=?p]
+                  (Dbar[case=?k, num='sg', pers=?p]
+                    (D[def='indef', num='sg', type='art'] a)
+                    (NP[case=?k, num=?n, pers=?p]
+                      (N[NUM='sg', gen='n'] bukh))))))))))))
+
+
+
+ikh volt tantsn oyb du voltst zingn
+
+|.i.v.t.o.d.v.z.|
+|[-] . . . . . .| [0:1] 'ikh'
+|. [-] . . . . .| [1:2] 'volt'
+|. . [-] . . . .| [2:3] 'tantsn'
+|. . . [-] . . .| [3:4] 'oyb'
+|. . . . [-] . .| [4:5] 'du'
+|. . . . . [-] .| [5:6] 'voltst'
+|. . . . . . [-]| [6:7] 'zingn'
+|[-] . . . . . .| [0:1] D[+DEF, case='nom', num='sg', pers=1, type='pron'] -> 'ikh' *
+|[-] . . . . . .| [0:1] Dbar[case='nom', num='sg', pers=1, type='pron'] -> D[COUNT=?c, +DEF, case='nom', num='sg', pers=1] *
+|[-] . . . . . .| [0:1] DP[case='nom', num='sg', pers=1] -> Dbar[COUNT=?c, DEF=?d, case='nom', num='sg', pers=1] *
+|[-> . . . . . .| [0:1] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?n: 'sg', ?p: 1}
+|. [-] . . . . .| [1:2] MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=1, tns='cond'] -> 'volt' *
+|. [-] . . . . .| [1:2] MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=3, tns='cond'] -> 'volt' *
+|. [-] . . . . .| [1:2] MOD[asp='simple', conj='fin', mood='indic', num='pl', pers=2, tns='cond'] -> 'volt' *
+|. [-> . . . . .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'pl', ?p: 2, ?pres: 'indic', ?t: 'cond'}
+|. [-> . . . . .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'pl', ?p: 2, ?past: 'indic', ?t: 'cond'}
+|. [-> . . . . .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 2, ?simple: 'simple', ?t: 'cond'}
+|. [-> . . . . .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 3, ?pres: 'indic', ?t: 'cond'}
+|. [-> . . . . .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 3, ?past: 'indic', ?t: 'cond'}
+|. [-> . . . . .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'indic', ?n: 'sg', ?p: 3, ?simple: 'simple', ?t: 'cond'}
+|. [-> . . . . .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 1, ?pres: 'indic', ?t: 'cond'}
+|. [-> . . . . .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 1, ?past: 'indic', ?t: 'cond'}
+|. [-> . . . . .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'indic', ?n: 'sg', ?p: 1, ?simple: 'simple', ?t: 'cond'}
+|. . [-] . . . .| [2:3] V[conj='inf', num='none', pers='none', val=0] -> 'tantsn' *
+|. . [-] . . . .| [2:3] V[conj='fin', mood='indic', num='pl', pers=1, tns='pres', val=0] -> 'tantsn' *
+|. . [-] . . . .| [2:3] V[conj='fin', mood='indic', num='pl', pers=3, tns='pres', val=0] -> 'tantsn' *
+|. . [-] . . . .| [2:3] VP[asp='simple', conj='fin', mood='indic', num='pl', pers=3, tns='pres', type=?y, val=0] -> V[conj='fin', mood='indic', num='pl', pers=3, tns='pres', type=?y, val=0] *
+|. . [-] . . . .| [2:3] VP[asp='simple', conj='fin', mood='indic', num='pl', pers=1, tns='pres', type=?y, val=0] -> V[conj='fin', mood='indic', num='pl', pers=1, tns='pres', type=?y, val=0] *
+|. . [-] . . . .| [2:3] VP[asp='simple', conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=0] -> V[conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=0] *
+|. . [-] . . . .| [2:3] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num='none', pers='none', tns=?t, type=?t] *
+|. [---] . . . .| [1:3] VP[asp=?a, conj='fin', mood='indic', num='pl', pers=2, tns='cond'] -> MOD[asp='simple', conj='fin', mood='indic', num='pl', pers=2, tns='cond'] VP[conj='inf'] *
+|. [---] . . . .| [1:3] VP[asp=?a, conj='fin', mood='indic', num='sg', pers=3, tns='cond'] -> MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=3, tns='cond'] VP[conj='inf'] *
+|. [---] . . . .| [1:3] VP[asp=?a, conj='fin', mood='indic', num='sg', pers=1, tns='cond'] -> MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=1, tns='cond'] VP[conj='inf'] *
+|[-----] . . . .| [0:3] IP[asp=?a, mood='indic', tns='cond'] -> DP[case='nom', num='sg', pers=1] VP[asp=?a, conj='fin', mood='indic', num='sg', pers=1, tns='cond'] *
+|[-----] . . . .| [0:3] Cbar[] -> IP[] *
+|[-----> . . . .| [0:3] IP[asp=?a, mood='indic', tns='cond'] -> IP[tns='cond'] * If[] DP[case='nom', num=?n, pers=?p] VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns='cond'] {}
+|[-----] . . . .| [0:3] CP[] -> Cbar[] *
+|. . [-] . . . .| [2:3] Cbar[] -> IP[] *
+|. . [-] . . . .| [2:3] CP[] -> Cbar[] *
+|. . . [-] . . .| [3:4] If[] -> 'oyb' *
+|. . . [-> . . .| [3:4] IP[asp=?a, mood=?m, tns=?t] -> If[] * DP[case='nom', num=?n, pers=?p] VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns='cond'] IP[tns='cond'] {}
+|. . . [-> . . .| [3:4] IP[asp=?a, mood='subj', tns=?t] -> If[] * DP[case='nom', num=?n, pers=?p] VP[asp=?a, conj='fin', mood='subj', num=?n, pers=?p, tns=?t] IP[tns='cond'] {}
+|[-------> . . .| [0:4] IP[asp=?a, mood='indic', tns='cond'] -> IP[tns='cond'] If[] * DP[case='nom', num=?n, pers=?p] VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns='cond'] {}
+|. . . . [-] . .| [4:5] D[+DEF, case='nom', num='sg', pers=2, type='pron'] -> 'du' *
+|. . . . [-] . .| [4:5] Dbar[case='nom', num='sg', pers=2, type='pron'] -> D[COUNT=?c, +DEF, case='nom', num='sg', pers=2] *
+|. . . . [-] . .| [4:5] DP[case='nom', num='sg', pers=2] -> Dbar[COUNT=?c, DEF=?d, case='nom', num='sg', pers=2] *
+|. . . . [-> . .| [4:5] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?n: 'sg', ?p: 2}
+|. . . [---> . .| [3:5] IP[asp=?a, mood=?m, tns=?t] -> If[] DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns='cond'] IP[tns='cond'] {?n: 'sg', ?p: 2}
+|. . . [---> . .| [3:5] IP[asp=?a, mood='subj', tns=?t] -> If[] DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood='subj', num=?n, pers=?p, tns=?t] IP[tns='cond'] {?n: 'sg', ?p: 2}
+|[---------> . .| [0:5] IP[asp=?a, mood='indic', tns='cond'] -> IP[tns='cond'] If[] DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns='cond'] {?n: 'sg', ?p: 2}
+|. . . . . [-] .| [5:6] MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=2, tns='cond'] -> 'voltst' *
+|. . . . . [-> .| [5:6] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 2, ?pres: 'indic', ?t: 'cond'}
+|. . . . . [-> .| [5:6] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 2, ?past: 'indic', ?t: 'cond'}
+|. . . . . [-> .| [5:6] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'indic', ?n: 'sg', ?p: 2, ?simple: 'simple', ?t: 'cond'}
+|. . . . . . [-]| [6:7] V[conj='inf', num='none', pers='none', val=0] -> 'zingn' *
+|. . . . . . [-]| [6:7] V[conj='fin', mood='indic', num='pl', pers=1, tns='pres', val=0] -> 'zingn' *
+|. . . . . . [-]| [6:7] V[conj='fin', mood='indic', num='pl', pers=3, tns='pres', val=0] -> 'zingn' *
+|. . . . . . [-]| [6:7] V[conj='inf', num='none', pers='none', val=1] -> 'zingn' *
+|. . . . . . [-]| [6:7] V[conj='fin', mood='indic', num='pl', pers=1, tns='pres', val=1] -> 'zingn' *
+|. . . . . . [->| [6:7] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, sem='volition', tns=?t, type=?y, val=1] * IP[mood='subj'] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 1, ?t: 'pres'}
+|. . . . . . [->| [6:7] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * DP[] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 1, ?t: 'pres'}
+|. . . . . . [->| [6:7] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * VP[mood=?m, num=?n, pers=?p, tns=?t] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 1, ?t: 'pres'}
+|. . . . . . [->| [6:7] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, sem='volition', tns=?t, type=?y, val=1] * IP[mood='subj'] {?j: 'inf', ?n: 'none', ?p: 'none'}
+|. . . . . . [->| [6:7] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * DP[] {?j: 'inf', ?n: 'none', ?p: 'none'}
+|. . . . . . [->| [6:7] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * VP[mood=?m, num=?n, pers=?p, tns=?t] {?j: 'inf', ?n: 'none', ?p: 'none'}
+|. . . . . . [-]| [6:7] VP[asp='simple', conj='fin', mood='indic', num='pl', pers=3, tns='pres', type=?y, val=0] -> V[conj='fin', mood='indic', num='pl', pers=3, tns='pres', type=?y, val=0] *
+|. . . . . . [-]| [6:7] VP[asp='simple', conj='fin', mood='indic', num='pl', pers=1, tns='pres', type=?y, val=0] -> V[conj='fin', mood='indic', num='pl', pers=1, tns='pres', type=?y, val=0] *
+|. . . . . . [-]| [6:7] VP[asp='simple', conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=0] -> V[conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=0] *
+|. . . . . . [-]| [6:7] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num='none', pers='none', tns=?t, type=?t] *
+|. . . . . [---]| [5:7] VP[asp=?a, conj='fin', mood='indic', num='sg', pers=2, tns='cond'] -> MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=2, tns='cond'] VP[conj='inf'] *
+|. . . . [-----]| [4:7] IP[asp=?a, mood='indic', tns='cond'] -> DP[case='nom', num='sg', pers=2] VP[asp=?a, conj='fin', mood='indic', num='sg', pers=2, tns='cond'] *
+|. . . [------->| [3:7] IP[asp=?a, mood=?m, tns=?t] -> If[] DP[case='nom', num=?n, pers=?p] VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns='cond'] * IP[tns='cond'] {?a2: Variable('?a'), ?m: 'indic', ?n: 'sg', ?p: 2}
+|[=============]| [0:7] IP[asp=?a, mood='indic', tns='cond'] -> IP[tns='cond'] If[] DP[case='nom', num='sg', pers=2] VP[asp=?a, conj='fin', mood='indic', num='sg', pers=2, tns='cond'] *
+|[=============]| [0:7] Cbar[] -> IP[] *
+|[------------->| [0:7] IP[asp=?a, mood='indic', tns='cond'] -> IP[tns='cond'] * If[] DP[case='nom', num=?n, pers=?p] VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns='cond'] {}
+|[=============]| [0:7] CP[] -> Cbar[] *
+|. . . . [-----]| [4:7] Cbar[] -> IP[] *
+|. . . . [----->| [4:7] IP[asp=?a, mood='indic', tns='cond'] -> IP[tns='cond'] * If[] DP[case='nom', num=?n, pers=?p] VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns='cond'] {}
+|. . . . [-----]| [4:7] CP[] -> Cbar[] *
+|. . . . . . [-]| [6:7] Cbar[] -> IP[] *
+|. . . . . . [-]| [6:7] CP[] -> Cbar[] *
+(CP[]
+  (Cbar[]
+    (IP[asp=?a, mood='indic', tns='cond']
+      (IP[asp=?a, mood='indic', tns='cond']
+        (DP[case='nom', num='sg', pers=1]
+          (Dbar[case='nom', num='sg', pers=1, type='pron']
+            (D[+DEF, case='nom', num='sg', pers=1, type='pron'] ikh)))
+        (VP[asp=?a, conj='fin', mood='indic', num='sg', pers=1, tns='cond']
+          (MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=1, tns='cond']
+            volt)
+          (VP[asp='simple', conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=0]
+            (V[conj='inf', num='none', pers='none', val=0] tantsn))))
+      (If[] oyb)
+      (DP[case='nom', num='sg', pers=2]
+        (Dbar[case='nom', num='sg', pers=2, type='pron']
+          (D[+DEF, case='nom', num='sg', pers=2, type='pron'] du)))
+      (VP[asp=?a, conj='fin', mood='indic', num='sg', pers=2, tns='cond']
+        (MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=2, tns='cond']
+          voltst)
+        (VP[asp='simple', conj='inf', mood=?m, num='none', pers='none', tns=?t, type=?y, val=0]
+          (V[conj='inf', num='none', pers='none', val=0] zingn))))))
+
+
+
+du flegst gehat gegangen
+
+|. du.fle.geh.geg.|
+|[---]   .   .   .| [0:1] 'du'
+|.   [---]   .   .| [1:2] 'flegst'
+|.   .   [---]   .| [2:3] 'gehat'
+|.   .   .   [---]| [3:4] 'gegangen'
+|[---]   .   .   .| [0:1] D[+DEF, case='nom', num='sg', pers=2, type='pron'] -> 'du' *
+|[---]   .   .   .| [0:1] Dbar[case='nom', num='sg', pers=2, type='pron'] -> D[COUNT=?c, +DEF, case='nom', num='sg', pers=2] *
+|[---]   .   .   .| [0:1] DP[case='nom', num='sg', pers=2] -> Dbar[COUNT=?c, DEF=?d, case='nom', num='sg', pers=2] *
+|[--->   .   .   .| [0:1] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?n: 'sg', ?p: 2}
+|.   [---]   .   .| [1:2] MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=2, tns='past'] -> 'flegst' *
+|.   [--->   .   .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'habitual', ?j: 'fin', ?n: 'sg', ?p: 2, ?pres: 'indic', ?t: 'past'}
+|.   [--->   .   .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'habitual', ?j: 'fin', ?n: 'sg', ?p: 2, ?past: 'indic', ?t: 'past'}
+|.   [--->   .   .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'indic', ?n: 'sg', ?p: 2, ?simple: 'habitual', ?t: 'past'}
+|.   [--->   .   .| [1:2] VP[asp='habitual', conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp='habitual', conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='part'] {?j: 'fin', ?m: 'indic', ?n: 'sg', ?p: 2, ?t: 'past'}
+|.   .   [---]   .| [2:3] AUX[conj='part', tns='past', type='act'] -> 'gehat' *
+|.   .   [---]   .| [2:3] V[conj='part', mood='none', type='act', val=1] -> 'gehat' *
+|.   .   [--->   .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, sem='volition', tns=?t, type=?y, val=1] * IP[mood='subj'] {?j: 'part', ?m: 'none', ?y: 'act'}
+|.   .   [--->   .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * DP[] {?j: 'part', ?m: 'none', ?y: 'act'}
+|.   .   [--->   .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * VP[mood=?m, num=?n, pers=?p, tns=?t] {?j: 'part', ?m: 'none', ?y: 'act'}
+|.   .   [--->   .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, val=?v] -> AUX[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y] * VP[conj='part', type=?y, val=?v] {?j: 'part', ?t: 'past', ?y: 'act'}
+|.   .   .   [---]| [3:4] V[conj='part', mood='none', type='state', val=0] -> 'gegangen' *
+|.   .   .   [---]| [3:4] VP[asp='simple', conj='part', mood='none', num=?n, pers=?p, tns=?t, type='state', val=0] -> V[conj='part', mood='none', num=?n, pers=?p, tns=?t, type='state', val=0] *
+|.   .   [-------]| [2:4] VP[asp='simple', conj='part', mood='none', num=?n, pers=?p, tns=?t, type='act', val=?v] -> V[conj='part', mood='none', num=?n, pers=?p, tns=?t, type='act', val=1] VP[mood='none', num=?n, pers=?p, tns=?t] *
+|.   [-----------]| [1:4] VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=2, tns='past'] -> MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=2, tns='past'] VP[conj='part'] *
+|[===============]| [0:4] IP[asp='habitual', mood='indic', tns='past'] -> DP[case='nom', num='sg', pers=2] VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=2, tns='past'] *
+|[===============]| [0:4] Cbar[] -> IP[] *
+|[===============]| [0:4] CP[] -> Cbar[] *
+(CP[]
+  (Cbar[]
+    (IP[asp='habitual', mood='indic', tns='past']
+      (DP[case='nom', num='sg', pers=2]
+        (Dbar[case='nom', num='sg', pers=2, type='pron']
+          (D[+DEF, case='nom', num='sg', pers=2, type='pron'] du)))
+      (VP[asp='habitual', conj='fin', mood='indic', num='sg', pers=2, tns='past']
+        (MOD[asp='habitual', conj='fin', mood='indic', num='sg', pers=2, tns='past']
+          flegst)
+        (VP[asp='simple', conj='part', mood='none', num=?n, pers=?p, tns=?t, type='act', val=?v]
+          (V[conj='part', mood='none', type='act', val=1] gehat)
+          (VP[asp='simple', conj='part', mood='none', num=?n, pers=?p, tns=?t, type='state', val=0]
+            (V[conj='part', mood='none', type='state', val=0]
+              gegangen)))))))
+
+
+
+ikh vel hobn gehat an epl
+
+|.i.v.h.g.a.e.|
+|[-] . . . . .| [0:1] 'ikh'
+|. [-] . . . .| [1:2] 'vel'
+|. . [-] . . .| [2:3] 'hobn'
+|. . . [-] . .| [3:4] 'gehat'
+|. . . . [-] .| [4:5] 'an'
+|. . . . . [-]| [5:6] 'epl'
+|[-] . . . . .| [0:1] D[+DEF, case='nom', num='sg', pers=1, type='pron'] -> 'ikh' *
+|[-] . . . . .| [0:1] Dbar[case='nom', num='sg', pers=1, type='pron'] -> D[COUNT=?c, +DEF, case='nom', num='sg', pers=1] *
+|[-] . . . . .| [0:1] DP[case='nom', num='sg', pers=1] -> Dbar[COUNT=?c, DEF=?d, case='nom', num='sg', pers=1] *
+|[-> . . . . .| [0:1] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?n: 'sg', ?p: 1}
+|. [-] . . . .| [1:2] MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=1, tns='fut', val=1] -> 'vel' *
+|. [-> . . . .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?pres, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 1, ?pres: 'indic', ?t: 'fut'}
+|. [-> . . . .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?a, conj=?j, mood=?past, num=?n, pers=?p, tns=?t, +volition] * IP[mood='subj', val=?v] {?a: 'simple', ?j: 'fin', ?n: 'sg', ?p: 1, ?past: 'indic', ?t: 'fut'}
+|. [-> . . . .| [1:2] VP[asp=?a, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[asp=?simple, conj=?j, mood=?m, num=?n, pers=?p, tns=?t] * VP[conj='inf'] {?j: 'fin', ?m: 'indic', ?n: 'sg', ?p: 1, ?simple: 'simple', ?t: 'fut'}
+|. . [-] . . .| [2:3] AUX[conj='inf', tns='past', type='act'] -> 'hobn' *
+|. . [-] . . .| [2:3] AUX[conj='fin', mood='inic', num='pl', pers=1, tns='past', type='act'] -> 'hobn' *
+|. . [-] . . .| [2:3] AUX[conj='fin', mood='indic', num='pl', pers=3, tns='past', type='act'] -> 'hobn' *
+|. . [-] . . .| [2:3] V[conj='inf', num='none', pers='none', val=1] -> 'hobn' *
+|. . [-] . . .| [2:3] V[conj='fin', mood='indic', num='pl', pers=1, tns='pres', val=1] -> 'hobn' *
+|. . [-] . . .| [2:3] V[conj='fin', mood='indic', num='pl', pers=3, tns='pres', val=0] -> 'hobn' *
+|. . [-] . . .| [2:3] VP[asp='simple', conj='fin', mood='indic', num='pl', pers=3, tns='pres', type=?y, val=0] -> V[conj='fin', mood='indic', num='pl', pers=3, tns='pres', type=?y, val=0] *
+|. . [-> . . .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, sem='volition', tns=?t, type=?y, val=1] * IP[mood='subj'] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 1, ?t: 'pres'}
+|. . [-> . . .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * DP[] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 1, ?t: 'pres'}
+|. . [-> . . .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * VP[mood=?m, num=?n, pers=?p, tns=?t] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 1, ?t: 'pres'}
+|. . [-> . . .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, sem='volition', tns=?t, type=?y, val=1] * IP[mood='subj'] {?j: 'inf', ?n: 'none', ?p: 'none'}
+|. . [-> . . .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * DP[] {?j: 'inf', ?n: 'none', ?p: 'none'}
+|. . [-> . . .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * VP[mood=?m, num=?n, pers=?p, tns=?t] {?j: 'inf', ?n: 'none', ?p: 'none'}
+|. . [-> . . .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, val=?v] -> AUX[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y] * VP[conj='part', type=?y, val=?v] {?j: 'fin', ?m: 'indic', ?n: 'pl', ?p: 3, ?t: 'past', ?y: 'act'}
+|. . [-> . . .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, val=?v] -> AUX[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y] * VP[conj='part', type=?y, val=?v] {?j: 'fin', ?m: 'inic', ?n: 'pl', ?p: 1, ?t: 'past', ?y: 'act'}
+|. . [-> . . .| [2:3] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, val=?v] -> AUX[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y] * VP[conj='part', type=?y, val=?v] {?j: 'inf', ?t: 'past', ?y: 'act'}
+|. . . [-] . .| [3:4] AUX[conj='part', tns='past', type='act'] -> 'gehat' *
+|. . . [-] . .| [3:4] V[conj='part', mood='none', type='act', val=1] -> 'gehat' *
+|. . . [-> . .| [3:4] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, sem='volition', tns=?t, type=?y, val=1] * IP[mood='subj'] {?j: 'part', ?m: 'none', ?y: 'act'}
+|. . . [-> . .| [3:4] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * DP[] {?j: 'part', ?m: 'none', ?y: 'act'}
+|. . . [-> . .| [3:4] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=?v] -> V[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y, val=1] * VP[mood=?m, num=?n, pers=?p, tns=?t] {?j: 'part', ?m: 'none', ?y: 'act'}
+|. . . [-> . .| [3:4] VP[asp='simple', conj=?j, mood=?m, num=?n, pers=?p, tns=?t, val=?v] -> AUX[conj=?j, mood=?m, num=?n, pers=?p, tns=?t, type=?y] * VP[conj='part', type=?y, val=?v] {?j: 'part', ?t: 'past', ?y: 'act'}
+|. . . . [-] .| [4:5] D[def='indef', num='sg', type='art'] -> 'an' *
+|. . . . [-> .| [4:5] Dbar[case=?k, num=?n, pers=?p] -> D[num=?n, pers=?p, type='art'] * NP[COUNT=?c, DEF=?d, case=?k, num=?n, pers=?p] {?n: 'sg'}
+|. . . . [-] .| [4:5] Dbar[case=?k, num='sg', pers=?p, type='pron'] -> D[COUNT=?c, DEF=?d, case=?k, num='sg', pers=?p] *
+|. . . . [-] .| [4:5] DP[case=?k, num='sg', pers=?p] -> Dbar[COUNT=?c, DEF=?d, case=?k, num='sg', pers=?p] *
+|. . . . [-> .| [4:5] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?k2: 'nom', ?n: 'sg', ?p2: Variable('?p')}
+|. . . [---] .| [3:5] VP[asp='simple', conj='part', mood='none', num=?n, pers=?p, tns=?t, type='act', val=?v] -> V[conj='part', mood='none', num=?n, pers=?p, tns=?t, type='act', val=1] DP[] *
+|. . [-----] .| [2:5] VP[asp='simple', conj='inf', mood='none', num='none', pers='none', tns=?t, type=?y, val=?v] -> V[conj='inf', mood='none', num='none', pers='none', tns=?t, type=?y, val=1] VP[mood='none', num='none', pers='none', tns=?t] *
+|. . [-----] .| [2:5] VP[asp='simple', conj='fin', mood='indic', num='pl', pers=3, tns='past', val=?v] -> AUX[conj='fin', mood='indic', num='pl', pers=3, tns='past', type='act'] VP[conj='part', type='act', val=?v] *
+|. . [-----] .| [2:5] VP[asp='simple', conj='fin', mood='inic', num='pl', pers=1, tns='past', val=?v] -> AUX[conj='fin', mood='inic', num='pl', pers=1, tns='past', type='act'] VP[conj='part', type='act', val=?v] *
+|. . [-----] .| [2:5] VP[asp='simple', conj='inf', mood=?m, num=?n, pers=?p, tns='past', val=?v] -> AUX[conj='inf', mood=?m, num=?n, pers=?p, tns='past', type='act'] VP[conj='part', type='act', val=?v] *
+|. . [-----] .| [2:5] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num=?n, pers=?p, tns='past', type='past'] *
+|. [-------] .| [1:5] VP[asp=?a, conj='fin', mood='indic', num='sg', pers=1, tns='fut'] -> MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=1, tns='fut'] VP[conj='inf'] *
+|[---------] .| [0:5] IP[asp=?a, mood='indic', tns='fut'] -> DP[case='nom', num='sg', pers=1] VP[asp=?a, conj='fin', mood='indic', num='sg', pers=1, tns='fut'] *
+|[---------] .| [0:5] Cbar[] -> IP[] *
+|[---------] .| [0:5] CP[] -> Cbar[] *
+|. . [-----] .| [2:5] Cbar[] -> IP[] *
+|. . [-----] .| [2:5] CP[] -> Cbar[] *
+|. [-------] .| [1:5] VP[asp=?a, conj='fin', mood='indic', num='sg', pers=1, tns='fut'] -> MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=1, tns='fut'] VP[conj='inf'] *
+|. . . . . [-]| [5:6] N[NUM='sg', gen='m'] -> 'epl' *
+|. . . . . [-]| [5:6] NP[case=?k, num=?n, pers=?p] -> N[case=?k, num=?n, pers=?p] *
+|. . . . . [-]| [5:6] Dbar[case=?k, num=?n, pers=?p] -> NP[DEF=?d, case=?k, num=?n, pers=?p] *
+|. . . . [---]| [4:6] Dbar[case=?k, num='sg', pers=?p] -> D[num='sg', pers=?p, type='art'] NP[COUNT=?c, DEF=?d, case=?k, num='sg', pers=?p] *
+|. . . . [---]| [4:6] DP[case=?k, num='sg', pers=?p] -> Dbar[COUNT=?c, DEF=?d, case=?k, num='sg', pers=?p] *
+|. . . . [--->| [4:6] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?k2: 'nom', ?n: 'sg', ?p2: Variable('?p')}
+|. . . [-----]| [3:6] VP[asp='simple', conj='part', mood='none', num=?n, pers=?p, tns=?t, type='act', val=?v] -> V[conj='part', mood='none', num=?n, pers=?p, tns=?t, type='act', val=1] DP[] *
+|. . [-------]| [2:6] VP[asp='simple', conj='inf', mood='none', num='none', pers='none', tns=?t, type=?y, val=?v] -> V[conj='inf', mood='none', num='none', pers='none', tns=?t, type=?y, val=1] VP[mood='none', num='none', pers='none', tns=?t] *
+|. . [-------]| [2:6] VP[asp='simple', conj='fin', mood='indic', num='pl', pers=3, tns='past', val=?v] -> AUX[conj='fin', mood='indic', num='pl', pers=3, tns='past', type='act'] VP[conj='part', type='act', val=?v] *
+|. . [-------]| [2:6] VP[asp='simple', conj='fin', mood='inic', num='pl', pers=1, tns='past', val=?v] -> AUX[conj='fin', mood='inic', num='pl', pers=1, tns='past', type='act'] VP[conj='part', type='act', val=?v] *
+|. . [-------]| [2:6] VP[asp='simple', conj='inf', mood=?m, num=?n, pers=?p, tns='past', val=?v] -> AUX[conj='inf', mood=?m, num=?n, pers=?p, tns='past', type='act'] VP[conj='part', type='act', val=?v] *
+|. . [-------]| [2:6] IP[asp='simple', mood='imper', tns='pres'] -> VP[mood='imper', num=?n, pers=?p, tns='past', type='past'] *
+|. [---------]| [1:6] VP[asp=?a, conj='fin', mood='indic', num='sg', pers=1, tns='fut'] -> MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=1, tns='fut'] VP[conj='inf'] *
+|[===========]| [0:6] IP[asp=?a, mood='indic', tns='fut'] -> DP[case='nom', num='sg', pers=1] VP[asp=?a, conj='fin', mood='indic', num='sg', pers=1, tns='fut'] *
+|[===========]| [0:6] Cbar[] -> IP[] *
+|[===========]| [0:6] CP[] -> Cbar[] *
+|. . [-------]| [2:6] Cbar[] -> IP[] *
+|. . [-------]| [2:6] CP[] -> Cbar[] *
+|. [---------]| [1:6] VP[asp=?a, conj='fin', mood='indic', num='sg', pers=1, tns='fut'] -> MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=1, tns='fut'] VP[conj='inf'] *
+|. . . . . [-]| [5:6] DP[case=?k, num=?n, pers=?p] -> Dbar[COUNT=?c, DEF=?d, case=?k, num=?n, pers=?p] *
+|. . . . . [->| [5:6] IP[asp=?a, mood=?m, tns=?t] -> DP[case='nom', num=?n, pers=?p] * VP[asp=?a, conj='fin', mood=?m, num=?n, pers=?p, tns=?t] {?k2: 'nom', ?n2: Variable('?n'), ?p2: Variable('?p')}
+(CP[]
+  (Cbar[]
+    (IP[asp=?a, mood='indic', tns='fut']
+      (DP[case='nom', num='sg', pers=1]
+        (Dbar[case='nom', num='sg', pers=1, type='pron']
+          (D[+DEF, case='nom', num='sg', pers=1, type='pron'] ikh)))
+      (VP[asp=?a, conj='fin', mood='indic', num='sg', pers=1, tns='fut']
+        (MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=1, tns='fut', val=1]
+          vel)
+        (VP[asp='simple', conj='inf', mood=?m, num=?n, pers=?p, tns='past', val=?v]
+          (AUX[conj='inf', tns='past', type='act'] hobn)
+          (VP[asp='simple', conj='part', mood='none', num=?n, pers=?p, tns=?t, type='act', val=?v]
+            (V[conj='part', mood='none', type='act', val=1] gehat)
+            (DP[case=?k, num='sg', pers=?p]
+              (Dbar[case=?k, num='sg', pers=?p]
+                (D[def='indef', num='sg', type='art'] an)
+                (NP[case=?k, num=?n, pers=?p]
+                  (N[NUM='sg', gen='m'] epl))))))))))
+(CP[]
+  (Cbar[]
+    (IP[asp=?a, mood='indic', tns='fut']
+      (DP[case='nom', num='sg', pers=1]
+        (Dbar[case='nom', num='sg', pers=1, type='pron']
+          (D[+DEF, case='nom', num='sg', pers=1, type='pron'] ikh)))
+      (VP[asp=?a, conj='fin', mood='indic', num='sg', pers=1, tns='fut']
+        (MOD[asp='simple', conj='fin', mood='indic', num='sg', pers=1, tns='fut', val=1]
+          vel)
+        (VP[asp='simple', conj='inf', mood='none', num='none', pers='none', tns=?t, type=?y, val=?v]
+          (V[conj='inf', num='none', pers='none', val=1] hobn)
+          (VP[asp='simple', conj='part', mood='none', num=?n, pers=?p, tns=?t, type='act', val=?v]
+            (V[conj='part', mood='none', type='act', val=1] gehat)
+            (DP[case=?k, num='sg', pers=?p]
+              (Dbar[case=?k, num='sg', pers=?p]
+                (D[def='indef', num='sg', type='art'] an)
+                (NP[case=?k, num=?n, pers=?p]
+                  (N[NUM='sg', gen='m'] epl))))))))))
+
+
+

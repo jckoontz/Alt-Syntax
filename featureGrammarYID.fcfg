@@ -174,8 +174,8 @@ V[val=1,conj=part,type=act,mood=none] -> 'gezungen' | 'geshribn' | 'gehat' | 'ge
 V[val=0,conj=part,type=state,mood=none] -> 'gegangen' | 'geforn'
 V[val=0,conj=part,type=state,mood=none] -> 'geven'
 
-V[val=0,conj=fin,mood=imper,num=sg] -> 'tants'
-V[val=0,conj=fin,mood=imper,num=sg] -> 'tantst'
+V[val=0,conj=fin,mood=imper,num=sg] -> 'tants' | 'zing' | 'farbeyg' 
+V[val=0,conj=fin,mood=imper,num=sg] -> 'tantst' | 'zingt'| 'farbeygt'
 
 
 

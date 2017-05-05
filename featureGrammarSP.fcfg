@@ -3,37 +3,42 @@
 
 # Grammar Rules
 # ############################
-CP[mood=?m] -> Cbar[mood=?m] 
-Cbar[mood=?m] -> IP[+TNS,mood=?m]
-
-IP[+TNS,mood=?m] -> DP[num=?n,pers=?p,case=nom] VP[num=?n,pers=?p,mood=?m,conj=fin] | VP[num=?n,pers=?p,tns=?t,type=?t, mood=imperative] | VP[num=?n,pers=?p,mood=?m] | Conj IP[+TNS,mood=?m] | DP[num=?n,pers=?p,case=nom] AUX[tns=?t,mood=?m] VP[num=?n,pers=?p,mood=?m]
-
+CP[mood=?m,s_type=?s] -> Cbar[mood=?m,s_type=?s] 
+Cbar[mood=?m,s_type=?s] -> IP[+TNS,mood=?m,s_type=?s]
+IP[+TNS,mood=?m,s_type=dec] -> DP[num=?n,pers=?p,case=nom] VP[num=?n,pers=?p,mood=?m,conj=fin] | VP[num=?n,pers=?p,mood=?m] | Conj IP[+TNS,mood=?m] | DP[num=?n,pers=?p,case=nom] AUX[tns=?t,mood=?m] VP[num=?n,pers=?p,mood=?m] 
+IP[+TNS,mood=?m,s_type=inter] -> VP[num=?n,pers=?p,tns=?t,type=?t,mood=?m,aspect=?a,conj=?c] PREG 
+IP[+TNS,mood=?m,s_type=imper] -> VP[num=?n,pers=?p,tns=?t,type=?t,mood=imperative,aspect=?a,conj=?c]
 
 DP[num=?n,pers=?p,case=?k] ->  Dbar[num=?n,pers=?p,case=?k]
 Dbar[num=?n,pers=?p] -> D[num=?n,DEF=?d,COUNT=?c] NP[num=?n,pers=?p,DEF=?d,COUNT=?c]
 Dbar[num=?n,pers=?p] -> NP[num=?n,pers=?p,DEF=?d,COUNT=?c]
 Dbar[num=?n,pers=?p,case=?k] -> D[num=?n,pers=?p,+DEF,type=pron,case=?k]
 NP[num=?n,pers=?p,COUNT=?c] -> N[num=?n,pers=?p,type=prop,COUNT=?c]
+
 VP[num=?n,pers=?p,tns=?t,mood=?m,type=?t,conj=?c] -> V[num=?n,pers=?p,val=1,tns=?t,mood=?m,type=?t,conj=?c] 
 VP[num=?n,pers=?p,tns=?t,mood=?m,type=?t,conj=?c] -> V[num=?n,pers=?p,val=1,tns=?t,mood=?m,type=volition,conj=?c] CP[mood=subjunctive]
 VP[num=?n,pers=?p,tns=?t,mood=?m,type=?t,conj=?c] -> V[num=?n,pers=?p,val=2,tns=?t,mood=?m,conj=?c] DP[case=acc] 
 VP[num=?n,pers=?p,tns=?t,mood=?m,type=?t,conj=?c] -> V[num=?n,pers=?p,val=2,tns=?t,mood=?m,conj=?c] VP[num=?n,pers=?p,tns=?t,mood=?m]
-VP[num=?n,pers=?p,tns=?t,mood=?m,type=?t,conj=?c] -> AUX[tns=?t,mood=?m,conj=?c] VP[tns=?t,conj=part]
-#VP[num=?n,pers=?p,tns=?t,type=?t, mood=imperative] -> V[num=?n,pers=?p,val=1,tns=?t,mood=?m,type=imerative,conj=?c]
+VP[num=?n,pers=?p,tns=?t,mood=?m,type=?t,conj=?c] -> AUX[tns=?t,mood=?m,conj=?c] VP[type=part,mood=indic,conj=part]
+VP[num=?n,pers=?p,tns=?t,mood=?m,type=?t,conj=part] -> V[num=?n,pers=?p,val=1,tns=?t,mood=?m,type=?t,conj=part]
+
+
+#VP[num=?n,pers=?p,tns=?t,type=?t,mood=imperative,aspect=?a,conj=?c] -> V[num=?n,pers=?p,val=1,tns=?t,mood=?m,type=imerative,conj=?c]
 VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?c] -> V[tns=?t,type=?t,conj=?c,+PREP] PP[case=dat]
 PP[case=?c] -> PREP[case=?c] NP[num=?n,pers=?p,COUNT=?c]
 VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?c] -> V[tns=?t,type=part,conj=?c] ADV[-NEG] 
-VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?c] -> V[tns=pret,num=sg,pers=1,val=1,mood=indic,conj=?c] VP[num=?n,pers=?p,tns=?t, type=?t,conj=?c]
+VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?c] -> V[tns=pret,num=sg,pers=1,val=1,mood=indic,conj=?c] VP[num=?n,pers=?p,tns=?t,type=?t,conj=?c]
 VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?c] -> V[num=?n,pers=?p,val=1,conj=infinitive]
 VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?c] -> MOD[tns=?t,mood=?m] VP[conj=?c,mood=?m]
+VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?c] -> AUX[tns=?t,mood=?m,+PROG] VP[conj=ger,mood=?m]
+VP[num=?n,pers=?p,tns=?t,mood=?m,type=?t,conj=?c] -> V[tns=?t,pers=?p,type=gerund,mood=indic,conj=ger,aspect=imperfect]
+#VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?c] -> V[num=?n,pers=?p,val=1,tns=?t,mood=?m,type=?t,conj=?c,+prog]
+#VP[num=?n,pers=?p,tns=?t,mood=?m,conj=?c] -> V[val=1,type=part,mood=indic,conj=part]
 
-#VP[num=?n,pers=?p,tns=?t,mood=?m] -> Conj VP[num=?n,pers=?p,tns=?t,mood=?m,type=?t]
 VP[num?=n,pers=?p,val=2,type=?t,mood=?m] -> V[num=?n,pers=?p,val=2,type=?t,mood=?m] Cbar[stype=decl,type=?t]
-VP[num=?n,pers=?p,tns=?t,type=?t,mood=?m] -> V[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=imperative] | AdvP VP[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=imperative] | V[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=imperative] AdvP
 
-#Cbar[stype=decl,type=reg] -> Comp IP[+TNS]
-#Cbar[stype=decl,type=doubt] -> IN IP[+TNS]
-#Cbar[stype=decl,type=wish,val=2] -> TO VP[tns=fut]
+VP[num=?n,pers=?p,tns=?t,type=?t,mood=imperative,aspect=?a,conj=?c] -> V[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=imperative,aspect=?a,conj=?c] | AdvP VP[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=imperative,aspect=?a,conj=?c] | V[num=?n,pers=?p,val=1,tns=?t,type=?t,mood=imperative,aspect=?a,conj=?c] AdvP
+
 AdvP[type=?t] -> ADV[-NEG] | ADV[+NEG] | ADV[type=place]
 
 # ############################
@@ -57,55 +62,60 @@ N[num=sg,pers=3,type=prop] -> 'Juan' | 'Maria' | 'Pedro' | 'Iñaki' | 'Lorea' | 
 #N[num=sg,pers=2,type=fam] -> 'tú' | 'vos'
 
 #Pres
-V[tns=pres,num=sg,pers=n,val=1,mood=indic,type=volition,aspect=imperfective] -> 'ojalá'
-V[tns=pres,num=sg,pers=1,val=1,mood=indic,type=volition,aspect=imperfective] -> 'quiero' | 'necesito' | 'exijo' | 'demando' | 'sugiero' | 'espero' | 'pido'
-V[tns=pres,num=sg,pers=2,val=1,mood=indic,type=volition,aspect=imperfective] -> 'quieres' | 'querés' | 'necesitas' | 'necesitás'| 'exiges' | 'exigís' | 'demandas' | 'demandás' | 'sugieres' | 'sugerís' | 'esperas' | 'esperás' | 'pides' | 'pedís'
-V[tns=pres,num=sg,pers=3,val=1,mood=indic,type=volition,aspect=imperfective] -> 'quiere' | 'necesita' | 'exige' | 'demanda' | 'sugiere' | 'espera' | 'pide'
-V[tns=pres,num=sg,pers=3,val=1,mood=indic,type=volition,aspect=imperfective] -> 'quiere' | 'necesita' | 'exige' | 'demanda'	| 'sugiere' | 'espera' | 'pide'
-V[tns=pres,num=pl,pers=1,val=1,mood=indic,type=volition,aspect=imperfective] -> 'queremos' | 'necesitamos' | 'exigimos' | 'demandamos' | 'sugerimos' | 'esperamos' | 'pedimos'
-V[tns=pres,num=pl,pers=2,val=1,mood=indic,type=volition,aspect=imperfective] -> 'queréis' | 'necesitáis' | 'exigías' | 'demandáis' | 'sugerís' | 'esperáis' | 'pedís'
-V[tns=pres,num=pl,pers=3,val=1,mood=indic,type=volition,aspect=imperfective] -> 'quieren' | 'necesitan' | 'exigen' | 'demandan' | 'sugieren' | 'esperan' | 'piden'
+V[tns=pres,num=sg,pers=n,val=1,mood=indic,type=volition,aspect=imperfective,conj=fin] -> 'ojalá'
+V[tns=pres,num=sg,pers=1,val=1,mood=indic,type=volition,aspect=imperfective,conj=fin] -> 'quiero' | 'necesito' | 'exijo' | 'demando' | 'sugiero' | 'espero' | 'pido'
+V[tns=pres,num=sg,pers=2,val=1,mood=indic,type=volition,aspect=imperfective,conj=fin] -> 'quieres' | 'querés' | 'necesitas' | 'necesitás'| 'exiges' | 'exigís' | 'demandas' | 'demandás' | 'sugieres' | 'sugerís' | 'esperas' | 'esperás' | 'pides' | 'pedís'
+V[tns=pres,num=sg,pers=3,val=1,mood=indic,type=volition,aspect=imperfective,conj=fin] -> 'quiere' | 'necesita' | 'exige' | 'demanda' | 'sugiere' | 'espera' | 'pide'
+V[tns=pres,num=sg,pers=3,val=1,mood=indic,type=volition,aspect=imperfective,conj=fin] -> 'quiere' | 'necesita' | 'exige' | 'demanda'	| 'sugiere' | 'espera' | 'pide'
+V[tns=pres,num=pl,pers=1,val=1,mood=indic,type=volition,aspect=imperfective,conj=fin] -> 'queremos' | 'necesitamos' | 'exigimos' | 'demandamos' | 'sugerimos' | 'esperamos' | 'pedimos'
+V[tns=pres,num=pl,pers=2,val=1,mood=indic,type=volition,aspect=imperfective,conj=fin] -> 'queréis' | 'necesitáis' | 'exigías' | 'demandáis' | 'sugerís' | 'esperáis' | 'pedís'
+V[tns=pres,num=pl,pers=3,val=1,mood=indic,type=volition,aspect=imperfective,conj=fin] -> 'quieren' | 'necesitan' | 'exigen' | 'demandan' | 'sugieren' | 'esperan' | 'piden'
 
 
 #Pret
-V[tns=pret,num=sg,pers=1,val=1,mood=indic,type=volition,aspect=perfective] -> 'quise' | 'necesité' | 'exigí' | 'demandé' | 'sugerí' | 'esperé' | 'pedí'
-V[tns=pret,num=sg,pers=2,val=1,mood=indic,type=volition,aspect=perfective] -> 'quisiste' | 'necesitaste' | 'exigiste' | 'demandaste' | 'sugeriste' | 'esperaste' | 'pediste'
-V[tns=pret,num=sg,pers=3,val=1,mood=indic,type=volition,aspect=perfective] -> 'quiso' | 'necesitó' | 'exigió' | 'demandó' | 'sugirió' | 'esperó' | 'pidió'
-V[tns=pret,num=pl,pers=1,val=1,mood=indic,type=volition,aspect=perfective] -> 'quisimos' | 'necesitamos' | 'exijimos' | 'demandamos' | 'sugerimos' | 'esperamos' | 'pedimos'
-V[tns=pret,num=pl,pers=2,val=1,mood=indic,type=volition,aspect=perfective] -> 'quisisteis' | 'necesitasteis' | 'exigisteis' | 'demandasteis' | 'sugeristeis' | 'esperasteis' | 'pedisteis'
-V[tns=pret,num=pl,pers=3,val=1,mood=indic,type=volition,aspect=perfective] -> 'quisieron' | 'necesitaron' | 'exigieron' | 'demandaron' | 'sugirieron' | 'esperaron' | 'pidieron'
+V[tns=pret,num=sg,pers=1,val=1,mood=indic,type=volition,aspect=perfective,conj=fin] -> 'quise' | 'necesité' | 'exigí' | 'demandé' | 'sugerí' | 'esperé' | 'pedí'
+V[tns=pret,num=sg,pers=2,val=1,mood=indic,type=volition,aspect=perfective,conj=fin] -> 'quisiste' | 'necesitaste' | 'exigiste' | 'demandaste' | 'sugeriste' | 'esperaste' | 'pediste'
+V[tns=pret,num=sg,pers=3,val=1,mood=indic,type=volition,aspect=perfective,conj=fin] -> 'quiso' | 'necesitó' | 'exigió' | 'demandó' | 'sugirió' | 'esperó' | 'pidió'
+V[tns=pret,num=pl,pers=1,val=1,mood=indic,type=volition,aspect=perfective,conj=fin] -> 'quisimos' | 'necesitamos' | 'exijimos' | 'demandamos' | 'sugerimos' | 'esperamos' | 'pedimos'
+V[tns=pret,num=pl,pers=2,val=1,mood=indic,type=volition,aspect=perfective,conj=fin] -> 'quisisteis' | 'necesitasteis' | 'exigisteis' | 'demandasteis' | 'sugeristeis' | 'esperasteis' | 'pedisteis'
+V[tns=pret,num=pl,pers=3,val=1,mood=indic,type=volition,aspect=perfective,conj=fin] -> 'quisieron' | 'necesitaron' | 'exigieron' | 'demandaron' | 'sugirieron' | 'esperaron' | 'pidieron'
 
 #Imperfecto
-V[tns=pret,num=sg,pers=1,val=1,mood=indic,aspect=imperfect,type=volition] -> 'quería' | 'necesitaba' | 'exigía' | 'demandaba' | 'sugería' | 'esperaba' | 'pedía'
-V[tns=pret,num=sg,pers=2,val=1,mood=indic,aspect=imperfect,type=volition] -> 'querías' | 'necesitabas' | 'exigías' | 'demandabas' | 'sugerías' | 'esperabas' | 'pedías'
-V[tns=pert,num=sg,pers=3,val=1,mood=indic,aspect=imperfect,type=volition] -> 'quería' | 'necesitaba' | 'exigía' | 'demandaba' | 'sugería' | 'esperaba' | 'pedía'
-V[tns=pret,num=pl,pers=1,val=1,mood=indic,aspect=imperfect,type=volition] -> 'queríamos' | 'necesitábamos' | 'exigíamos' | 'demandábamos' | 'sugeríamos' | 'esperábamos' | 'pedíamos'
-V[tns=pret,num=pl,pers=2,val=1,mood=indic,aspect=imperfect,type=volition] -> 'queríais' | 'necesitabais' | 'exigíais' | 'demandabais' | 'sugeríais' | 'esperabais' | 'pedíais'
-V[tns=pret,num=pl,pers=3,val=1,mood=indic,aspect=imperfect,type=volition] -> 'querían' | 'necesitaban' | 'exigían' | 'demandaban' | 'sugerían' | 'esperaban' | 'pedían'
+V[tns=pret,num=sg,pers=1,val=1,mood=indic,aspect=imperfect,type=volition,conj=fin] -> 'quería' | 'necesitaba' | 'exigía' | 'demandaba' | 'sugería' | 'esperaba' | 'pedía'
+V[tns=pret,num=sg,pers=2,val=1,mood=indic,aspect=imperfect,type=volition,conj=fin] -> 'querías' | 'necesitabas' | 'exigías' | 'demandabas' | 'sugerías' | 'esperabas' | 'pedías'
+V[tns=pert,num=sg,pers=3,val=1,mood=indic,aspect=imperfect,type=volition,conj=fin] -> 'quería' | 'necesitaba' | 'exigía' | 'demandaba' | 'sugería' | 'esperaba' | 'pedía'
+V[tns=pret,num=pl,pers=1,val=1,mood=indic,aspect=imperfect,type=volition,conj=fin] -> 'queríamos' | 'necesitábamos' | 'exigíamos' | 'demandábamos' | 'sugeríamos' | 'esperábamos' | 'pedíamos'
+V[tns=pret,num=pl,pers=2,val=1,mood=indic,aspect=imperfect,type=volition,conj=fin] -> 'queríais' | 'necesitabais' | 'exigíais' | 'demandabais' | 'sugeríais' | 'esperabais' | 'pedíais'
+V[tns=pret,num=pl,pers=3,val=1,mood=indic,aspect=imperfect,type=volition,conj=fin] -> 'querían' | 'necesitaban' | 'exigían' | 'demandaban' | 'sugerían' | 'esperaban' | 'pedían'
 
 #Future
-V[tns=fut,num=sg,pers=1,val=1,mood=indic,type=volition,aspect=imperfect] -> 'querré' | 'necesitaré' | 'exigiré' | 'demandaré' | 'sugeriré' | 'esperaría' | 'pediría'
-V[tns=fut,num=sg,pers=2,val=1,mood=indic,type=volition,aspect=imperfect] -> 'querrás' | 'necesitarás' | 'exigirás' | 'demandarás' | 'sugerirás' | 'esperarías' | 'pedirías'
-V[tns=fuut,num=sg,pers=3,val=1,mood=indic,type=volition,aspect=imperfect] -> 'querrá' | 'necesitará' | 'exigirá' | 'demandará' | 'sugerirá' | 'esperaría' | 'pediría'
-V[tns=fut,num=pl,pers=1,val=1,mood=indic,type=volition,aspect=imperfect] -> 'querremos' | 'necesitaremos' | 'exigiremos' | 'damdaremos' | 'sugerimos' | 'esperaríamos' | 'pediríamos'
-V[tns=fut,num=pl,pers=2,val=1,mood=indic,type=volition,aspect=imperfect] -> 'querréis' | 'necesitaréis' | 'exigiréis' | 'demandaréis' | 'sugeriréis' | 'esperaríais' | 'pediríais'
-V[tns=fut,num=pl,pers=3,val=1,mood=indic,type=volition,aspect=imperfect] -> 'querrán' | 'necesitarán' | 'exigierán' | 'demandarán' | 'sugerirás' | 'esperarían' | 'pedirían'
+V[tns=fut,num=sg,pers=1,val=1,mood=indic,type=volition,aspect=imperfect,conj=fin] -> 'querré' | 'necesitaré' | 'exigiré' | 'demandaré' | 'sugeriré' | 'esperaría' | 'pediría'
+V[tns=fut,num=sg,pers=2,val=1,mood=indic,type=volition,aspect=imperfect,conj=fin] -> 'querrás' | 'necesitarás' | 'exigirás' | 'demandarás' | 'sugerirás' | 'esperarías' | 'pedirías'
+V[tns=fuut,num=sg,pers=3,val=1,mood=indic,type=volition,aspect=imperfect,conj=fin] -> 'querrá' | 'necesitará' | 'exigirá' | 'demandará' | 'sugerirá' | 'esperaría' | 'pediría'
+V[tns=fut,num=pl,pers=1,val=1,mood=indic,type=volition,aspect=imperfect,conj=fin] -> 'querremos' | 'necesitaremos' | 'exigiremos' | 'damdaremos' | 'sugerimos' | 'esperaríamos' | 'pediríamos'
+V[tns=fut,num=pl,pers=2,val=1,mood=indic,type=volition,aspect=imperfect,conj=fin] -> 'querréis' | 'necesitaréis' | 'exigiréis' | 'demandaréis' | 'sugeriréis' | 'esperaríais' | 'pediríais'
+V[tns=fut,num=pl,pers=3,val=1,mood=indic,type=volition,aspect=imperfect,conj=fin] -> 'querrán' | 'necesitarán' | 'exigierán' | 'demandarán' | 'sugerirás' | 'esperarían' | 'pedirían'
 
 #Conditional
-V[tns=cond,num=sg,pers=1,val=1,mood=cond,type=probability] -> 'querría' | 'necesitaría' | 'exigiría' | 'demandaría' | 'sugeriría' | 'esperaré' | 'pediré'
-V[tns=cond,num=sg,pers=2,val=1,mood=cond,type=probability] -> 'querrías' | 'necesitarías' | 'exigirías' | 'demandarías' | 'sugerirías' | 'esperarás' | 'pedirás'
-V[tns=cond,num=sg,pers=3,val=1,mood=cond,type=probability] -> 'querría' | 'necesitaría' | 'exigiría' | 'demandaría' | 'sugeriría' | 'esperará' | 'pidirá'
-V[tns=cond,num=pl,pers=1,val=1,mood=cond,type=probability] -> 'querríamos' | 'necesitaríamos' | 'exigiríamos' | 'demandaríamos' | 'sugeriríamos' | 'esperaremos' | 'pediremos'
-V[tns=cond,num=pl,pers=2,val=1,mood=cond,type=probability] -> 'querríais' | 'necesitaríais' | 'exigiríais' | 'demandaríais' | 'sugeriríais' | 'esperaréis' | 'pediréis'
-V[tns=cond,num=pl,pers=3,val=1,mood=cond,type=probability] -> 'querrían' | 'necesitarían' | 'exigirían' | 'demandarían' | 'sugerirían' | 'esperarán' | 'pedirán'
+V[tns=cond,num=sg,pers=1,val=1,mood=cond,type=probability,conj=fin] -> 'querría' | 'necesitaría' | 'exigiría' | 'demandaría' | 'sugeriría' | 'esperaré' | 'pediré'
+V[tns=cond,num=sg,pers=2,val=1,mood=cond,type=probability,conj=fin] -> 'querrías' | 'necesitarías' | 'exigirías' | 'demandarías' | 'sugerirías' | 'esperarás' | 'pedirás'
+V[tns=cond,num=sg,pers=3,val=1,mood=cond,type=probability,conj=fin] -> 'querría' | 'necesitaría' | 'exigiría' | 'demandaría' | 'sugeriría' | 'esperará' | 'pidirá'
+V[tns=cond,num=pl,pers=1,val=1,mood=cond,type=probability,conj=fin] -> 'querríamos' | 'necesitaríamos' | 'exigiríamos' | 'demandaríamos' | 'sugeriríamos' | 'esperaremos' | 'pediremos'
+V[tns=cond,num=pl,pers=2,val=1,mood=cond,type=probability,conj=fin] -> 'querríais' | 'necesitaríais' | 'exigiríais' | 'demandaríais' | 'sugeriríais' | 'esperaréis' | 'pediréis'
+V[tns=cond,num=pl,pers=3,val=1,mood=cond,type=probability,conj=fin] -> 'querrían' | 'necesitarían' | 'exigirían' | 'demandarían' | 'sugerirían' | 'esperarán' | 'pedirán'
 
 #Particples
-V[tns=pres,num=sg,pers=1,val=1,type=part,mood=indic] -> 'estudiado' | 'pasado' | 'dormido'
-V[tns=pres,num=sg,pers=1,val=1,mood=indic,type=volition] -> 'querido' | 'necesitado' | 'exigido' | 'demandado' | 'sugerido' | 'esperado' | 'pedido'
-V[tns=imperfect_subjunctive,num=sg,pers=1,val=1,type=part,mood=subj] -> 'estudiado' | 'pasado' | 'dormido'
-V[tns=pres,num=sg,pers=1,val=1,type=prog,mood=indic] -> 'estudiado' | 'pasado' | 'dormido'
-V[tns=pres,val=1,type=gerund,mood=indic] -> 'estudiando' | 'pasando' | 'durmiendo'
-V[tns=pret,val=1,type=gerund,mood=indic] -> 'estudiando' | 'pasando' | 'durmiendo'
+V[val=1,type=part,mood=indic,conj=part] -> 'estudiado' | 'pasado' | 'dormido' 
+V[val=1,type=part,mood=indic,conj=part,+PREP] -> 'viajado'
+
+
+V[mood=indic,type=volition,conj=part] -> 'querido' | 'necesitado' | 'exigido' | 'demandado' | 'sugerido' | 'esperado' | 'pedido'
+V[tns=imperfect_subjunctive,num=sg,pers=1,val=1,type=part,mood=subj,conj=part] -> 'estudiado' | 'pasado' | 'dormido'
+V[tns=pres,num=sg,pers=1,val=1,type=prog,mood=indic,conj=part] -> 'estudiado' | 'pasado' | 'dormido'
+
+
+V[tns=pres,val=1,type=gerund,mood=indic,conj=ger,aspect=imperfect] -> 'estudiando' | 'pasando' | 'durmiendo'
+V[tns=pret,val=1,type=gerund,mood=indic,conj=ger] -> 'estudiando' | 'pasando' | 'durmiendo'
 
 #Ser
 V[tns=pres,num=sg,pers=1,val=1,mood=indic,conj=fin] -> 'soy'
@@ -141,15 +151,59 @@ V[tns=fut,num=pl,pers=3,val=1,mood=indic,conj=fin] -> 'serían'
 V[tns=progressive,val=1,conj=gerund] -> 'siendo'
 V[tns=pres,val=1,conj=part] -> 'sido'
 
-V[tns=pres,num=sg,pers=3,val=2,mood=indic,+PREP,con=fin] -> 'ama' | 'llama' | 've' | 'compra' | 'gana'
-V[conj=infinitive] -> 'estudiar' | 'viajar' | 'ir'
 
 
 
+#Estar
+AUX[tns=pres,num=sg,pers=1,val=1,mood=indic,conj=fin,+PROG] -> 'estoy'
+MOD[tns=pres,num=sg,pers=2,val=1,mood=indic,conj=fin,+prog] -> 'estás'
+MOD[tns=pres,num=sg,pers=3,val=1,mood=indic,conj=fin] -> 'está'
+MOD[tns=pres,num=pl,pers=1,val=1,mood=indic,conj=fin] -> 'estamos'
+MOD[tns=pres,num=pl,pers=2,val=1,mood=indic,conj=fin] -> 'estáis'
+MOD[tns=pres,num=pl,pers=3,val=1,mood=indic,conj=fin] -> 'están'
+MOD[tns=pret,num=sg,pers=1,val=1,mood=indic,conj=fin] -> 'estuve'
+V[tns=pret,num=sg,pers=2,val=1,mood=indic,conj=fin] -> 'estuviste'
+V[tns=pret,num=sg,pers=3,val=1,mood=indic,conj=fin] -> 'estuvo'
+V[tns=pret,num=pl,pers=1,val=1,mood=indic,conj=fin] -> 'estuvimos'
+V[tns=pret,num=pl,pers=2,val=1,mood=indic,conj=fin] -> 'estuvisteis'
+V[tns=pret,num=pl,pers=3,val=1,mood=indic,conj=fin] -> 'estuvieron'
+V[tns=imperfecto,num=sg,pers=1,val=1,mood=indic,conj=fin] -> 'estaba'
+V[tns=imperfecto,num=sg,pers=2,val=1,mood=indic,conj=fin] -> 'estabas'
+V[tns=imperfecto,num=sg,pers=3,val=1,mood=indic,conj=fin] -> 'estaba'
+V[tns=imperfecto,num=pl,pers=1,val=1,mood=indic,conj=fin] -> 'estábamos'
+V[tns=imperfecto,num=pl,pers=2,val=1,mood=indic,conj=fin] -> 'estabais'
+V[tns=imperfecto,num=pl,pers=3,val=1,mood=indic,conj=fin] -> 'estaban'
+MOD[tns=fut,num=sg,pers=1,val=1,mood=indic,conj=fin] -> 'estaré'
+V[tns=fut,num=sg,pers=2,val=1,mood=indic,conj=fin] -> 'estarás'
+V[tns=fut,num=sg,pers=3,val=1,mood=indic,conj=fin] -> 'estará'
+V[tns=fut,num=pl,pers=1,val=1,mood=indic,conj=fin] -> 'estaremos'
+V[tns=fut,num=pl,pers=2,val=1,mood=indic,conj=fin] -> 'estaréis'
+V[tns=fut,num=pl,pers=3,val=1,mood=indic,conj=fin] -> 'estarán'
+V[tns=cond,num=sg,pers=1,val=1,mood=indic,conj=fin] -> 'estaría'
+V[tns=cond,num=sg,pers=2,val=1,mood=indic,conj=fin] -> 'estarías'
+V[tns=cond,num=sg,pers=3,val=1,mood=indic,conj=fin] -> 'estaría'
+V[tns=cond,num=pl,pers=1,val=1,mood=indic,conj=fin] -> 'estaríamos'
+V[tns=cond,num=pl,pers=2,val=1,mood=indic,conj=fin] -> 'estaríais'
+V[tns=cond,num=pl,pers=3,val=1,mood=indic,conj=fin] -> 'estarían'
+V[tns=progressive,val=1,type=gerund,conj=ger] -> 'estando'
+V[tns=pres,val=1,conj=part] -> 'estado'
+
+
+
+# +Prep 'a' Verbs
+V[tns=pres,num=sg,pers=1,val=2,mood=indic,+PREP,con=fin] -> 'amo' | 'llamo' | 'veo' | 'escucho' | 'gano'
+V[tns=pres,num=sg,pers=3,val=2,mood=indic,+PREP,con=fin] -> 'ama' | 'llama' | 've' | 'escuchar' | 'gana'
+
+#Infinitival
+V[conj=infin] -> 'estudiar' | 'viajar' | 'ir'
+
+
+#Imperatives
 V[tns=pres,num=pl,pers=3,val=1,mood=imperative,conj=fin] -> 'vengan'
 V[tns=pres,num=sg,pers=2,val=1,mood=imperative,conj=fin] -> 'vengas' | 'vení'
 
-V[tns=pres,num=sg,pers=1,val=1,type=part,mood=subj,conj=part] -> 'estudiado' | 'pasado' | 'dormido'
+
+V[tns=pres,num=sg,pers=1,val=1,type=part,mood=indic,conj=part] -> 'estudiado' | 'pasado' | 'dormido'
 V[tns=pres,num=sg,pers=2,val=1,mood=subjunctive,conj=fin] -> 'vengas' 
 
 V[tns=cond,num=sg,pers=1,val=1,mood=cond,type=probability,conj=fin] -> 'haría' | 'estudiaría' | 'llamaría' 
@@ -160,7 +214,7 @@ ADV[+NEG] -> 'no' | 'No' | 'nunca' | 'mal' | 'fatal'
 
 
 #Auxiliaries
-AUX[tns=pres,num=sg,pers=1,mood=indic,aspect=perfect,conj=fin] -> 'he'
+AUX[tns=pres,num=sg,pers=1,mood=indic,aspect=perfect] -> 'he'
 AUX[tns=pres,num=sg,pers=2,mood=indic,aspect=perfect] -> 'has'
 AUX[tns=pres,num=sg,pers=3,mood=indic,aspect=perfect] -> 'ha'
 AUX[tns=pres,num=pl,pers=1,mood=indic,aspect=perfect] -> 'hemos'
@@ -189,8 +243,10 @@ AUX[tns=imperfect_subjunctive,num=pl,pers=2,mood=subj,aspect=perfect] -> 'hubier
 AUX[tns=imperfect_subjunctive,num=pl,pers=3,mood=subj,aspect=perfect] -> 'hubieran' | 'hubiesen'
 
 #MOD
-MOD[tns=conditional,aspect=imperfective,num=1,mood=indic,conj=fin] -> 'debo' | 'puedo' | 'suelo'
+MOD[tns=pres,aspect=imperfective,num=1,mood=indic,conj=fin] -> 'debo' | 'puedo' | 'suelo'
 MOD[tns=conditional,aspect=imperfective,num=1,mood=indic,conj=fin] -> 'debería' | 'podría' | 'soldría'
 Conj -> 'que' | 'si'
 
 PREP[case=dat] -> 'a'
+
+PREG -> '?'

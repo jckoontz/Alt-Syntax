@@ -219,22 +219,6 @@ habéis viajado a Barcelona ?
 
 
 
-había caminado
-
-|.había.camin.|
-|[-----]     .| [0:1] 'había'
-|.     [-----]| [1:2] 'caminado'
-|[-----]     .| [0:1] AUX[aspect='perfect', mood='indic', num='sg', pers=1, tns='imperfect'] -> 'había' *
-|[-----]     .| [0:1] AUX[aspect='perfect', mood='indic', num='sg', pers=3, tns='imperfect'] -> 'había' *
-|[----->     .| [0:1] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] -> AUX[conj=?c, mood=?m, tns=?t] * VP[conj='part', mood='indic', type='part'] {?m: 'indic', ?t: 'imperfect'}
-|[----->     .| [0:1] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t] -> AUX[+PROG, mood=?m, tns=?t] * VP[conj='ger', mood=?m] {?m: 'indic', ?t: 'imperfect'}
-|[----->     .| [0:1] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] -> AUX[conj=?c, mood=?m, tns=?t] * VP[conj='part', mood='indic', type='part'] {?m: 'indic', ?t: 'imperfect'}
-|[----->     .| [0:1] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t] -> AUX[+PROG, mood=?m, tns=?t] * VP[conj='ger', mood=?m] {?m: 'indic', ?t: 'imperfect'}
-|.     [-----]| [1:2] V[conj='part', mood='indic', num='sg', pers=1, tns='pres', type='part', val=1] -> 'caminado' *
-* había caminado
-
-
-
 he visitado a Iñaki
 
 |. he.vis. a .Iña.|

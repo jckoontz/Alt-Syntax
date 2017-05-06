@@ -4,7 +4,6 @@ declare -a arr=("estoy estudiando"
                 "debería estudiar" 
                 "quiero que vengas" 
                 "habéis viajado a Barcelona ?"   
-                "había caminado"
                 "he visitado a Iñaki"
                 "vení")             
 

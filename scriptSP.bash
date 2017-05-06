@@ -1,7 +1,7 @@
 echo > examplesSP.txt
 
 declare -a arr=("estoy estudiando" 
-                "debería estudiar 
+                "debería estudiar" 
                 "quiero que vengas" 
                 "habéis viajado a Barcelona ?"
                 "ikh volt tantsn oyb du voltst zingn"   

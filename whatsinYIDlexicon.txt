@@ -1,4 +1,6 @@
-'az'
+Words in the lexicon for the yiddish feature grammar:
+
+'az' 
 'tsu' (infinitive prefix)
 'oyb'
 

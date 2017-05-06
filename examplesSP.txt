@@ -1,0 +1,320 @@
+
+estoy estudiando
+
+|.estoy.estud.|
+|[-----]     .| [0:1] 'estoy'
+|.     [-----]| [1:2] 'estudiando'
+|[-----]     .| [0:1] AUX[+PROG, conj='fin', mood='indic', num='sg', pers=1, tns='pres', val=1] -> 'estoy' *
+|[----->     .| [0:1] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] -> AUX[conj=?c, mood=?m, tns=?t] * VP[conj='part', mood='indic', type='part'] {?c: 'fin', ?m: 'indic', ?t: 'pres'}
+|[----->     .| [0:1] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t] -> AUX[+PROG, mood=?m, tns=?t] * VP[conj='ger', mood=?m] {?m: 'indic', ?t: 'pres'}
+|.     [-----]| [1:2] V[aspect='imperfect', conj='ger', mood='indic', tns='pres', type='gerund', val=1] -> 'estudiando' *
+|.     [-----]| [1:2] V[conj='ger', mood='indic', tns='pret', type='gerund', val=1] -> 'estudiando' *
+|.     [----->| [1:2] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t] -> V[conj=?c, mood='indic', num='sg', pers=1, tns='pret', val=1] * VP[conj=?c, num=?n, pers=?p, tns=?t, type=?t] {?c: 'ger'}
+|.     [-----]| [1:2] VP[conj=?c, mood=?m, num=?n, pers=?p, tns='pret', type='pret'] -> V[aspect='imperfect', conj='ger', mood='indic', pers=?p, tns='pret', type='gerund'] *
+|.     [-----]| [1:2] IP[+TNS, mood=?m] -> VP[mood=?m, num=?n, pers=?p] *
+|.     [----->| [1:2] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] * PREG[] {?c3: Variable('?c'), ?m3: Variable('?m'), ?n3: Variable('?n'), ?p3: Variable('?p'), ?t: 'pret'}
+|[===========]| [0:2] VP[conj=?c, mood='indic', num=?n, pers=?p, tns='pres'] -> AUX[+PROG, mood='indic', tns='pres'] VP[conj='ger', mood='indic'] *
+|[===========]| [0:2] IP[+TNS, mood='indic'] -> VP[mood='indic', num=?n, pers=?p] *
+|[----------->| [0:2] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] * PREG[] {?c3: Variable('?c'), ?m: 'indic', ?n3: Variable('?n'), ?p3: Variable('?p'), ?t: 'pres'}
+|[===========]| [0:2] Cbar[mood='indic'] -> IP[+TNS, mood='indic'] *
+|[===========]| [0:2] CP[mood='indic'] -> Cbar[mood='indic'] *
+|.     [-----]| [1:2] Cbar[mood=?m] -> IP[+TNS, mood=?m] *
+|.     [-----]| [1:2] CP[mood=?m] -> Cbar[mood=?m] *
+|.     [-----]| [1:2] VP[conj=?c, mood=?m, num=?n, pers=?p, tns='pres', type='pres'] -> V[aspect='imperfect', conj='ger', mood='indic', pers=?p, tns='pres', type='gerund'] *
+|.     [-----]| [1:2] IP[+TNS, mood=?m] -> VP[mood=?m, num=?n, pers=?p] *
+|.     [----->| [1:2] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] * PREG[] {?c3: Variable('?c'), ?m3: Variable('?m'), ?n3: Variable('?n'), ?p3: Variable('?p'), ?t: 'pres'}
+|[===========]| [0:2] VP[conj=?c, mood='indic', num=?n, pers=?p, tns='pres'] -> AUX[+PROG, mood='indic', tns='pres'] VP[conj='ger', mood='indic'] *
+(CP[mood='indic']
+  (Cbar[mood='indic']
+    (IP[+TNS, mood='indic']
+      (VP[conj=?c, mood='indic', num=?n, pers=?p, tns='pres']
+        (AUX[+PROG, conj='fin', mood='indic', num='sg', pers=1, tns='pres', val=1]
+          estoy)
+        (VP[conj=?c, mood=?m, num=?n, pers=?p, tns='pret', type='pret']
+          (V[conj='ger', mood='indic', tns='pret', type='gerund', val=1]
+            estudiando))))))
+(CP[mood='indic']
+  (Cbar[mood='indic']
+    (IP[+TNS, mood='indic']
+      (VP[conj=?c, mood='indic', num=?n, pers=?p, tns='pres']
+        (AUX[+PROG, conj='fin', mood='indic', num='sg', pers=1, tns='pres', val=1]
+          estoy)
+        (VP[conj=?c, mood=?m, num=?n, pers=?p, tns='pres', type='pres']
+          (V[aspect='imperfect', conj='ger', mood='indic', tns='pres', type='gerund', val=1]
+            estudiando))))))
+
+
+
+debería estudiar
+
+|.deber.estud.|
+|[-----]     .| [0:1] 'debería'
+|.     [-----]| [1:2] 'estudiar'
+|[-----]     .| [0:1] MOD[aspect='imperfective', conj='fin', mood='indic', num=1, tns='conditional'] -> 'debería' *
+|[----->     .| [0:1] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t] -> MOD[mood=?m, tns=?t] * VP[conj=?c, mood=?m] {?m: 'indic', ?t: 'conditional'}
+|.     [-----]| [1:2] V[conj='infin'] -> 'estudiar' *
+|.     [-----]| [1:2] VP[conj='infin', mood=?m, num=?n, pers=?p, tns=?t, type=?t] -> V[conj='infin', mood=?m, num=?n, pers=?p, tns=?t, type=?t, val=1] *
+|.     [----->| [1:2] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] -> V[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type='volition', val=1] * CP[mood='subjunctive'] {?c: 'infin'}
+|.     [-----]| [1:2] VP[conj='infin', mood=?m, num=?n, pers=?p, tns=?t, type=?t] -> V[conj='infin', mood=?m, num=?n, pers=?p, tns=?t, val=2] *
+|.     [----->| [1:2] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] -> V[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, val=2] * VP[mood=?m, num=?n, pers=?p, tns=?t] {?c: 'infin'}
+|.     [----->| [1:2] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t] -> V[+PREP, conj=?c, tns=?t, type=?t] * PP[case='dat'] {?c: 'infin'}
+|.     [----->| [1:2] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t] -> V[conj=?c, mood='indic', num='sg', pers=1, tns='pret', val=1] * VP[conj=?c, num=?n, pers=?p, tns=?t, type=?t] {?c: 'infin'}
+|.     [----->| [1:2] VP[aspect=?a, conj=?c, mood='imperative', num=?n, pers=?p, tns=?t, type=?t, val=1] -> V[aspect=?a, conj=?c, mood='imperative', num=?n, pers=?p, tns=?t, type=?t, val=1] * AdvP[type='place'] {?c: 'infin'}
+|.     [----->| [1:2] VP[aspect=?a, conj=?c, mood='imperative', num=?n, pers=?p, tns=?t, type=?t, val=1] -> V[aspect=?a, conj=?c, mood='imperative', num=?n, pers=?p, tns=?t, type=?t, val=1] * AdvP[+NEG] {?c: 'infin'}
+|.     [----->| [1:2] VP[aspect=?a, conj=?c, mood='imperative', num=?n, pers=?p, tns=?t, type=?t, val=1] -> V[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t, val=1] * AdvP[type='time'] {?c: 'infin'}
+|.     [-----]| [1:2] IP[+TNS, mood=?m] -> VP[mood=?m, num=?n, pers=?p] *
+|.     [----->| [1:2] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] * PREG[] {?c: 'infin', ?m3: Variable('?m'), ?n3: Variable('?n'), ?p3: Variable('?p'), ?t3: Variable('?t')}
+|[===========]| [0:2] VP[conj='infin', mood='indic', num=?n, pers=?p, tns='conditional'] -> MOD[mood='indic', tns='conditional'] VP[conj='infin', mood='indic'] *
+|[===========]| [0:2] IP[+TNS, mood='indic'] -> VP[mood='indic', num=?n, pers=?p] *
+|[----------->| [0:2] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] * PREG[] {?c: 'infin', ?m: 'indic', ?n3: Variable('?n'), ?p3: Variable('?p'), ?t: 'conditional'}
+|[===========]| [0:2] Cbar[mood='indic'] -> IP[+TNS, mood='indic'] *
+|[===========]| [0:2] CP[mood='indic'] -> Cbar[mood='indic'] *
+|.     [-----]| [1:2] Cbar[mood=?m] -> IP[+TNS, mood=?m] *
+|.     [-----]| [1:2] CP[mood=?m] -> Cbar[mood=?m] *
+|.     [-----]| [1:2] IP[+TNS, mood=?m] -> VP[mood=?m, num=?n, pers=?p] *
+|.     [----->| [1:2] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] * PREG[] {?c: 'infin', ?m3: Variable('?m'), ?n3: Variable('?n'), ?p3: Variable('?p'), ?t3: Variable('?t')}
+|[===========]| [0:2] VP[conj='infin', mood='indic', num=?n, pers=?p, tns='conditional'] -> MOD[mood='indic', tns='conditional'] VP[conj='infin', mood='indic'] *
+(CP[mood='indic']
+  (Cbar[mood='indic']
+    (IP[+TNS, mood='indic']
+      (VP[conj='infin', mood='indic', num=?n, pers=?p, tns='conditional']
+        (MOD[aspect='imperfective', conj='fin', mood='indic', num=1, tns='conditional']
+          debería)
+        (VP[conj='infin', mood=?m, num=?n, pers=?p, tns=?t, type=?t]
+          (V[conj='infin'] estudiar))))))
+(CP[mood='indic']
+  (Cbar[mood='indic']
+    (IP[+TNS, mood='indic']
+      (VP[conj='infin', mood='indic', num=?n, pers=?p, tns='conditional']
+        (MOD[aspect='imperfective', conj='fin', mood='indic', num=1, tns='conditional']
+          debería)
+        (VP[conj='infin', mood=?m, num=?n, pers=?p, tns=?t, type=?t]
+          (V[conj='infin'] estudiar))))))
+
+
+
+quiero que vengas
+
+|.quie.que .veng.|
+|[----]    .    .| [0:1] 'quiero'
+|.    [----]    .| [1:2] 'que'
+|.    .    [----]| [2:3] 'vengas'
+|[----]    .    .| [0:1] V[aspect='imperfective', conj='fin', mood='indic', num='sg', pers=1, tns='pres', type='volition', val=1] -> 'quiero' *
+|[---->    .    .| [0:1] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] -> V[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type='volition', val=1] * CP[mood='subjunctive'] {?c: 'fin', ?m: 'indic', ?n: 'sg', ?p: 1, ?t: 'pres'}
+|.    [----]    .| [1:2] Conj[] -> 'que' *
+|.    [---->    .| [1:2] IP[+TNS, mood=?m] -> Conj[] * IP[+TNS, mood=?m] {}
+|.    .    [----]| [2:3] V[conj='fin', mood='imperative', num='sg', pers=2, tns='pres', val=1] -> 'vengas' *
+|.    .    [----]| [2:3] V[conj='fin', mood='subjunctive', num='sg', pers=2, tns='pres', val=1] -> 'vengas' *
+|.    .    [----]| [2:3] VP[conj='fin', mood='subjunctive', num='sg', pers=2, tns='pres', type='pres'] -> V[conj='fin', mood='subjunctive', num='sg', pers=2, tns='pres', type='pres', val=1] *
+|.    .    [---->| [2:3] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] -> V[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type='volition', val=1] * CP[mood='subjunctive'] {?c: 'fin', ?m: 'subjunctive', ?n: 'sg', ?p: 2, ?t: 'pres'}
+|.    .    [---->| [2:3] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t] -> V[+PREP, conj=?c, tns=?t, type=?t] * PP[case='dat'] {?c: 'fin', ?t: 'pres'}
+|.    .    [---->| [2:3] VP[aspect=?a, conj=?c, mood='imperative', num=?n, pers=?p, tns=?t, type=?t, val=1] -> V[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t, val=1] * AdvP[type='time'] {?c: 'fin', ?m: 'subjunctive', ?n: 'sg', ?p: 2, ?t: 'pres'}
+|.    .    [----]| [2:3] IP[+TNS, mood='subjunctive'] -> VP[mood='subjunctive', num='sg', pers=2] *
+|.    .    [---->| [2:3] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] * PREG[] {?c: 'fin', ?m: 'subjunctive', ?n: 'sg', ?p: 2, ?t: 'pres'}
+|.    .    [----]| [2:3] Cbar[mood='subjunctive'] -> IP[+TNS, mood='subjunctive'] *
+|.    [---------]| [1:3] IP[+TNS, mood='subjunctive'] -> Conj[] IP[+TNS, mood='subjunctive'] *
+|.    [---------]| [1:3] Cbar[mood='subjunctive'] -> IP[+TNS, mood='subjunctive'] *
+|.    [---------]| [1:3] CP[mood='subjunctive'] -> Cbar[mood='subjunctive'] *
+|[==============]| [0:3] VP[conj='fin', mood='indic', num='sg', pers=1, tns='pres', type='pres'] -> V[conj='fin', mood='indic', num='sg', pers=1, tns='pres', type='volition', val=1] CP[mood='subjunctive'] *
+|[==============]| [0:3] IP[+TNS, mood='indic'] -> VP[mood='indic', num='sg', pers=1] *
+|[-------------->| [0:3] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] * PREG[] {?c: 'fin', ?m: 'indic', ?n: 'sg', ?p: 1, ?t: 'pres'}
+|[==============]| [0:3] Cbar[mood='indic'] -> IP[+TNS, mood='indic'] *
+|[==============]| [0:3] CP[mood='indic'] -> Cbar[mood='indic'] *
+|.    .    [----]| [2:3] CP[mood='subjunctive'] -> Cbar[mood='subjunctive'] *
+|.    .    [----]| [2:3] VP[conj='fin', mood='imperative', num='sg', pers=2, tns='pres', type='pres'] -> V[conj='fin', mood='imperative', num='sg', pers=2, tns='pres', type='pres', val=1] *
+|.    .    [---->| [2:3] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] -> V[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type='volition', val=1] * CP[mood='subjunctive'] {?c: 'fin', ?m: 'imperative', ?n: 'sg', ?p: 2, ?t: 'pres'}
+|.    .    [---->| [2:3] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t] -> V[+PREP, conj=?c, tns=?t, type=?t] * PP[case='dat'] {?c: 'fin', ?t: 'pres'}
+|.    .    [---->| [2:3] VP[aspect=?a, conj=?c, mood='imperative', num=?n, pers=?p, tns=?t, type=?t, val=1] -> V[aspect=?a, conj=?c, mood='imperative', num=?n, pers=?p, tns=?t, type=?t, val=1] * AdvP[type='place'] {?c: 'fin', ?n: 'sg', ?p: 2, ?t: 'pres'}
+|.    .    [---->| [2:3] VP[aspect=?a, conj=?c, mood='imperative', num=?n, pers=?p, tns=?t, type=?t, val=1] -> V[aspect=?a, conj=?c, mood='imperative', num=?n, pers=?p, tns=?t, type=?t, val=1] * AdvP[+NEG] {?c: 'fin', ?n: 'sg', ?p: 2, ?t: 'pres'}
+|.    .    [---->| [2:3] VP[aspect=?a, conj=?c, mood='imperative', num=?n, pers=?p, tns=?t, type=?t, val=1] -> V[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t, val=1] * AdvP[type='time'] {?c: 'fin', ?m: 'imperative', ?n: 'sg', ?p: 2, ?t: 'pres'}
+|.    .    [----]| [2:3] IP[+TNS, mood='imperative'] -> VP[mood='imperative', num='sg', pers=2] *
+|.    .    [---->| [2:3] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] * PREG[] {?c: 'fin', ?m: 'imperative', ?n: 'sg', ?p: 2, ?t: 'pres'}
+|.    .    [----]| [2:3] Cbar[mood='imperative'] -> IP[+TNS, mood='imperative'] *
+|.    [---------]| [1:3] IP[+TNS, mood='imperative'] -> Conj[] IP[+TNS, mood='imperative'] *
+|.    [---------]| [1:3] Cbar[mood='imperative'] -> IP[+TNS, mood='imperative'] *
+|.    [---------]| [1:3] CP[mood='imperative'] -> Cbar[mood='imperative'] *
+|.    .    [----]| [2:3] CP[mood='imperative'] -> Cbar[mood='imperative'] *
+(CP[mood='indic']
+  (Cbar[mood='indic']
+    (IP[+TNS, mood='indic']
+      (VP[conj='fin', mood='indic', num='sg', pers=1, tns='pres', type='pres']
+        (V[aspect='imperfective', conj='fin', mood='indic', num='sg', pers=1, tns='pres', type='volition', val=1]
+          quiero)
+        (CP[mood='subjunctive']
+          (Cbar[mood='subjunctive']
+            (IP[+TNS, mood='subjunctive']
+              (Conj[] que)
+              (IP[+TNS, mood='subjunctive']
+                (VP[conj='fin', mood='subjunctive', num='sg', pers=2, tns='pres', type='pres']
+                  (V[conj='fin', mood='subjunctive', num='sg', pers=2, tns='pres', val=1]
+                    vengas))))))))))
+
+
+
+habéis viajado a Barcelona ?
+
+|.ha.vi.a .Ba.? .|
+|[--]  .  .  .  .| [0:1] 'habéis'
+|.  [--]  .  .  .| [1:2] 'viajado'
+|.  .  [--]  .  .| [2:3] 'a'
+|.  .  .  [--]  .| [3:4] 'Barcelona'
+|.  .  .  .  [--]| [4:5] '?'
+|[--]  .  .  .  .| [0:1] AUX[aspect='perfect', mood='indic', num='pl', pers=2, tns='pres'] -> 'habéis' *
+|[-->  .  .  .  .| [0:1] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] -> AUX[conj=?c, mood=?m, tns=?t] * VP[conj='part', mood='indic', type='part'] {?m: 'indic', ?t: 'pres'}
+|[-->  .  .  .  .| [0:1] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t] -> AUX[+PROG, mood=?m, tns=?t] * VP[conj='ger', mood=?m] {?m: 'indic', ?t: 'pres'}
+|.  [--]  .  .  .| [1:2] V[+PREP, conj='part', mood='indic', type='part', val=1] -> 'viajado' *
+|.  [--]  .  .  .| [1:2] VP[conj='part', mood='indic', num=?n, pers=?p, tns='part', type='part'] -> V[conj='part', mood='indic', num=?n, pers=?p, tns='part', type='part', val=1] *
+|.  [-->  .  .  .| [1:2] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t] -> V[+PREP, conj=?c, tns=?t, type=?t] * PP[case='dat'] {?c: 'part', ?t: 'part'}
+|.  [-->  .  .  .| [1:2] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t] -> V[conj=?c, mood='indic', num='sg', pers=1, tns='pret', val=1] * VP[conj=?c, num=?n, pers=?p, tns=?t, type=?t] {?c: 'part'}
+|.  [-->  .  .  .| [1:2] VP[aspect=?a, conj=?c, mood='imperative', num=?n, pers=?p, tns=?t, type=?t, val=1] -> V[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t, val=1] * AdvP[type='time'] {?c: 'part', ?m: 'indic', ?t: 'part'}
+|.  [--]  .  .  .| [1:2] IP[+TNS, mood='indic'] -> VP[mood='indic', num=?n, pers=?p] *
+|.  [-->  .  .  .| [1:2] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] * PREG[] {?c: 'part', ?m: 'indic', ?n3: Variable('?n'), ?p3: Variable('?p'), ?t: 'part'}
+|[-----]  .  .  .| [0:2] VP[conj=?c, mood='indic', num=?n, pers=?p, tns='pres', type='pres'] -> AUX[conj=?c, mood='indic', tns='pres'] VP[conj='part', mood='indic', type='part'] *
+|[-----]  .  .  .| [0:2] IP[+TNS, mood='indic'] -> VP[mood='indic', num=?n, pers=?p] *
+|[----->  .  .  .| [0:2] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] * PREG[] {?c3: Variable('?c'), ?m: 'indic', ?n3: Variable('?n'), ?p3: Variable('?p'), ?t: 'pres'}
+|[-----]  .  .  .| [0:2] Cbar[mood='indic'] -> IP[+TNS, mood='indic'] *
+|[-----]  .  .  .| [0:2] CP[mood='indic'] -> Cbar[mood='indic'] *
+|.  [--]  .  .  .| [1:2] Cbar[mood='indic'] -> IP[+TNS, mood='indic'] *
+|.  [--]  .  .  .| [1:2] CP[mood='indic'] -> Cbar[mood='indic'] *
+|.  .  [--]  .  .| [2:3] PREP[case='dat'] -> 'a' *
+|.  .  [-->  .  .| [2:3] PP[case=?c] -> PREP[case=?c] * NP[COUNT=?c, num=?n, pers=?p] {?c: 'dat'}
+|.  .  .  [--]  .| [3:4] N[num='sg', pers=3, type='prop'] -> 'Barcelona' *
+|.  .  .  [--]  .| [3:4] NP[COUNT=?c, num='sg', pers=3] -> N[COUNT=?c, num='sg', pers=3, type='prop'] *
+|.  .  .  [--]  .| [3:4] Dbar[num='sg', pers=3] -> NP[COUNT=?c, DEF=?d, num='sg', pers=3] *
+|.  .  [-----]  .| [2:4] PP[case='dat'] -> PREP[case='dat'] NP[COUNT='dat', num='sg', pers=3] *
+|.  [--------]  .| [1:4] VP[conj='part', mood=?m, num=?n, pers=?p, tns='part'] -> V[+PREP, conj='part', tns='part', type='part'] PP[case='dat'] *
+|.  [--------]  .| [1:4] IP[+TNS, mood=?m] -> VP[mood=?m, num=?n, pers=?p] *
+|.  [-------->  .| [1:4] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] * PREG[] {?c: 'part', ?m3: Variable('?m'), ?n3: Variable('?n'), ?p3: Variable('?p'), ?t: 'part'}
+|[-----------]  .| [0:4] VP[conj=?c, mood='indic', num=?n, pers=?p, tns='pres', type='pres'] -> AUX[conj=?c, mood='indic', tns='pres'] VP[conj='part', mood='indic', type='part'] *
+|[-----------]  .| [0:4] IP[+TNS, mood='indic'] -> VP[mood='indic', num=?n, pers=?p] *
+|[----------->  .| [0:4] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] * PREG[] {?c3: Variable('?c'), ?m: 'indic', ?n3: Variable('?n'), ?p3: Variable('?p'), ?t: 'pres'}
+|[-----------]  .| [0:4] Cbar[mood='indic'] -> IP[+TNS, mood='indic'] *
+|[-----------]  .| [0:4] CP[mood='indic'] -> Cbar[mood='indic'] *
+|.  [--------]  .| [1:4] Cbar[mood=?m] -> IP[+TNS, mood=?m] *
+|.  [--------]  .| [1:4] CP[mood=?m] -> Cbar[mood=?m] *
+|.  .  .  [--]  .| [3:4] DP[case=?k, num='sg', pers=3] -> Dbar[case=?k, num='sg', pers=3] *
+|.  .  .  [-->  .| [3:4] IP[+TNS, mood=?m] -> DP[case='nom', num=?n, pers=?p] * VP[conj='fin', mood=?m, num=?n, pers=?p] {?k2: 'nom', ?n: 'sg', ?p: 3}
+|.  .  .  [-->  .| [3:4] IP[+TNS, mood=?m] -> DP[case='nom', num=?n, pers=?p] * AUX[mood=?m, tns=?t] VP[mood=?m, num=?n, pers=?p] {?k3: 'nom', ?n: 'sg', ?p: 3}
+|.  .  .  .  [--]| [4:5] PREG[] -> '?' *
+|.  [-----------]| [1:5] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj='part', mood=?m, num=?n, pers=?p, tns='part', type='part'] PREG[] *
+|[==============]| [0:5] IP[+TNS, mood='indic', s_type='inter'] -> VP[aspect=?a, conj=?c, mood='indic', num=?n, pers=?p, tns='pres', type='pres'] PREG[] *
+|[==============]| [0:5] Cbar[mood='indic'] -> IP[+TNS, mood='indic'] *
+|[==============]| [0:5] CP[mood='indic'] -> Cbar[mood='indic'] *
+|.  [-----------]| [1:5] Cbar[mood=?m] -> IP[+TNS, mood=?m] *
+|.  [-----------]| [1:5] CP[mood=?m] -> Cbar[mood=?m] *
+(CP[mood='indic']
+  (Cbar[mood='indic']
+    (IP[+TNS, mood='indic', s_type='inter']
+      (VP[conj=?c, mood='indic', num=?n, pers=?p, tns='pres', type='pres']
+        (AUX[aspect='perfect', mood='indic', num='pl', pers=2, tns='pres']
+          habéis)
+        (VP[conj='part', mood=?m, num=?n, pers=?p, tns='part']
+          (V[+PREP, conj='part', mood='indic', type='part', val=1]
+            viajado)
+          (PP[case='dat']
+            (PREP[case='dat'] a)
+            (NP[COUNT=?c, num='sg', pers=3]
+              (N[num='sg', pers=3, type='prop'] Barcelona)))))
+      (PREG[] ?))))
+
+
+
+había caminado
+
+|.había.camin.|
+|[-----]     .| [0:1] 'había'
+|.     [-----]| [1:2] 'caminado'
+|[-----]     .| [0:1] AUX[aspect='perfect', mood='indic', num='sg', pers=1, tns='imperfect'] -> 'había' *
+|[-----]     .| [0:1] AUX[aspect='perfect', mood='indic', num='sg', pers=3, tns='imperfect'] -> 'había' *
+|[----->     .| [0:1] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] -> AUX[conj=?c, mood=?m, tns=?t] * VP[conj='part', mood='indic', type='part'] {?m: 'indic', ?t: 'imperfect'}
+|[----->     .| [0:1] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t] -> AUX[+PROG, mood=?m, tns=?t] * VP[conj='ger', mood=?m] {?m: 'indic', ?t: 'imperfect'}
+|[----->     .| [0:1] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] -> AUX[conj=?c, mood=?m, tns=?t] * VP[conj='part', mood='indic', type='part'] {?m: 'indic', ?t: 'imperfect'}
+|[----->     .| [0:1] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t] -> AUX[+PROG, mood=?m, tns=?t] * VP[conj='ger', mood=?m] {?m: 'indic', ?t: 'imperfect'}
+|.     [-----]| [1:2] V[conj='part', mood='indic', num='sg', pers=1, tns='pres', type='part', val=1] -> 'caminado' *
+* había caminado
+
+
+
+he visitado a Iñaki
+
+|. he.vis. a .Iña.|
+|[---]   .   .   .| [0:1] 'he'
+|.   [---]   .   .| [1:2] 'visitado'
+|.   .   [---]   .| [2:3] 'a'
+|.   .   .   [---]| [3:4] 'Iñaki'
+|[---]   .   .   .| [0:1] AUX[aspect='perfect', mood='indic', num='sg', pers=1, tns='pres'] -> 'he' *
+|[--->   .   .   .| [0:1] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] -> AUX[conj=?c, mood=?m, tns=?t] * VP[conj='part', mood='indic', type='part'] {?m: 'indic', ?t: 'pres'}
+|[--->   .   .   .| [0:1] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t] -> AUX[+PROG, mood=?m, tns=?t] * VP[conj='ger', mood=?m] {?m: 'indic', ?t: 'pres'}
+|.   [---]   .   .| [1:2] V[+PREP, conj='part', mood='indic', type='part', val=1] -> 'visitado' *
+|.   [---]   .   .| [1:2] VP[conj='part', mood='indic', num=?n, pers=?p, tns='part', type='part'] -> V[conj='part', mood='indic', num=?n, pers=?p, tns='part', type='part', val=1] *
+|.   [--->   .   .| [1:2] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t] -> V[+PREP, conj=?c, tns=?t, type=?t] * PP[case='dat'] {?c: 'part', ?t: 'part'}
+|.   [--->   .   .| [1:2] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t] -> V[conj=?c, mood='indic', num='sg', pers=1, tns='pret', val=1] * VP[conj=?c, num=?n, pers=?p, tns=?t, type=?t] {?c: 'part'}
+|.   [--->   .   .| [1:2] VP[aspect=?a, conj=?c, mood='imperative', num=?n, pers=?p, tns=?t, type=?t, val=1] -> V[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t, val=1] * AdvP[type='time'] {?c: 'part', ?m: 'indic', ?t: 'part'}
+|.   [---]   .   .| [1:2] IP[+TNS, mood='indic'] -> VP[mood='indic', num=?n, pers=?p] *
+|.   [--->   .   .| [1:2] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] * PREG[] {?c: 'part', ?m: 'indic', ?n3: Variable('?n'), ?p3: Variable('?p'), ?t: 'part'}
+|[-------]   .   .| [0:2] VP[conj=?c, mood='indic', num=?n, pers=?p, tns='pres', type='pres'] -> AUX[conj=?c, mood='indic', tns='pres'] VP[conj='part', mood='indic', type='part'] *
+|[-------]   .   .| [0:2] IP[+TNS, mood='indic'] -> VP[mood='indic', num=?n, pers=?p] *
+|[------->   .   .| [0:2] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] * PREG[] {?c3: Variable('?c'), ?m: 'indic', ?n3: Variable('?n'), ?p3: Variable('?p'), ?t: 'pres'}
+|[-------]   .   .| [0:2] Cbar[mood='indic'] -> IP[+TNS, mood='indic'] *
+|[-------]   .   .| [0:2] CP[mood='indic'] -> Cbar[mood='indic'] *
+|.   [---]   .   .| [1:2] Cbar[mood='indic'] -> IP[+TNS, mood='indic'] *
+|.   [---]   .   .| [1:2] CP[mood='indic'] -> Cbar[mood='indic'] *
+|.   .   [---]   .| [2:3] PREP[case='dat'] -> 'a' *
+|.   .   [--->   .| [2:3] PP[case=?c] -> PREP[case=?c] * NP[COUNT=?c, num=?n, pers=?p] {?c: 'dat'}
+|.   .   .   [---]| [3:4] N[num='sg', pers=3, type='prop'] -> 'Iñaki' *
+|.   .   .   [---]| [3:4] NP[COUNT=?c, num='sg', pers=3] -> N[COUNT=?c, num='sg', pers=3, type='prop'] *
+|.   .   .   [---]| [3:4] Dbar[num='sg', pers=3] -> NP[COUNT=?c, DEF=?d, num='sg', pers=3] *
+|.   .   [-------]| [2:4] PP[case='dat'] -> PREP[case='dat'] NP[COUNT='dat', num='sg', pers=3] *
+|.   [-----------]| [1:4] VP[conj='part', mood=?m, num=?n, pers=?p, tns='part'] -> V[+PREP, conj='part', tns='part', type='part'] PP[case='dat'] *
+|.   [-----------]| [1:4] IP[+TNS, mood=?m] -> VP[mood=?m, num=?n, pers=?p] *
+|.   [----------->| [1:4] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] * PREG[] {?c: 'part', ?m3: Variable('?m'), ?n3: Variable('?n'), ?p3: Variable('?p'), ?t: 'part'}
+|[===============]| [0:4] VP[conj=?c, mood='indic', num=?n, pers=?p, tns='pres', type='pres'] -> AUX[conj=?c, mood='indic', tns='pres'] VP[conj='part', mood='indic', type='part'] *
+|[===============]| [0:4] IP[+TNS, mood='indic'] -> VP[mood='indic', num=?n, pers=?p] *
+|[--------------->| [0:4] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] * PREG[] {?c3: Variable('?c'), ?m: 'indic', ?n3: Variable('?n'), ?p3: Variable('?p'), ?t: 'pres'}
+|[===============]| [0:4] Cbar[mood='indic'] -> IP[+TNS, mood='indic'] *
+|[===============]| [0:4] CP[mood='indic'] -> Cbar[mood='indic'] *
+|.   [-----------]| [1:4] Cbar[mood=?m] -> IP[+TNS, mood=?m] *
+|.   [-----------]| [1:4] CP[mood=?m] -> Cbar[mood=?m] *
+|.   .   .   [---]| [3:4] DP[case=?k, num='sg', pers=3] -> Dbar[case=?k, num='sg', pers=3] *
+|.   .   .   [--->| [3:4] IP[+TNS, mood=?m] -> DP[case='nom', num=?n, pers=?p] * VP[conj='fin', mood=?m, num=?n, pers=?p] {?k2: 'nom', ?n: 'sg', ?p: 3}
+|.   .   .   [--->| [3:4] IP[+TNS, mood=?m] -> DP[case='nom', num=?n, pers=?p] * AUX[mood=?m, tns=?t] VP[mood=?m, num=?n, pers=?p] {?k3: 'nom', ?n: 'sg', ?p: 3}
+(CP[mood='indic']
+  (Cbar[mood='indic']
+    (IP[+TNS, mood='indic']
+      (VP[conj=?c, mood='indic', num=?n, pers=?p, tns='pres', type='pres']
+        (AUX[aspect='perfect', mood='indic', num='sg', pers=1, tns='pres']
+          he)
+        (VP[conj='part', mood=?m, num=?n, pers=?p, tns='part']
+          (V[+PREP, conj='part', mood='indic', type='part', val=1]
+            visitado)
+          (PP[case='dat']
+            (PREP[case='dat'] a)
+            (NP[COUNT=?c, num='sg', pers=3]
+              (N[num='sg', pers=3, type='prop'] Iñaki))))))))
+
+
+
+vení
+
+|.   vení  .|
+|[=========]| [0:1] 'vení'
+|[=========]| [0:1] V[conj='fin', mood='imperative', num='sg', pers=2, tns='pres', val=1] -> 'vení' *
+|[=========]| [0:1] VP[conj='fin', mood='imperative', num='sg', pers=2, tns='pres', type='pres'] -> V[conj='fin', mood='imperative', num='sg', pers=2, tns='pres', type='pres', val=1] *
+|[--------->| [0:1] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] -> V[conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type='volition', val=1] * CP[mood='subjunctive'] {?c: 'fin', ?m: 'imperative', ?n: 'sg', ?p: 2, ?t: 'pres'}
+|[--------->| [0:1] VP[conj=?c, mood=?m, num=?n, pers=?p, tns=?t] -> V[+PREP, conj=?c, tns=?t, type=?t] * PP[case='dat'] {?c: 'fin', ?t: 'pres'}
+|[--------->| [0:1] VP[aspect=?a, conj=?c, mood='imperative', num=?n, pers=?p, tns=?t, type=?t, val=1] -> V[aspect=?a, conj=?c, mood='imperative', num=?n, pers=?p, tns=?t, type=?t, val=1] * AdvP[type='place'] {?c: 'fin', ?n: 'sg', ?p: 2, ?t: 'pres'}
+|[--------->| [0:1] VP[aspect=?a, conj=?c, mood='imperative', num=?n, pers=?p, tns=?t, type=?t, val=1] -> V[aspect=?a, conj=?c, mood='imperative', num=?n, pers=?p, tns=?t, type=?t, val=1] * AdvP[+NEG] {?c: 'fin', ?n: 'sg', ?p: 2, ?t: 'pres'}
+|[--------->| [0:1] VP[aspect=?a, conj=?c, mood='imperative', num=?n, pers=?p, tns=?t, type=?t, val=1] -> V[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t, val=1] * AdvP[type='time'] {?c: 'fin', ?m: 'imperative', ?n: 'sg', ?p: 2, ?t: 'pres'}
+|[=========]| [0:1] IP[+TNS, mood='imperative'] -> VP[mood='imperative', num='sg', pers=2] *
+|[--------->| [0:1] IP[+TNS, mood=?m, s_type='inter'] -> VP[aspect=?a, conj=?c, mood=?m, num=?n, pers=?p, tns=?t, type=?t] * PREG[] {?c: 'fin', ?m: 'imperative', ?n: 'sg', ?p: 2, ?t: 'pres'}
+|[=========]| [0:1] Cbar[mood='imperative'] -> IP[+TNS, mood='imperative'] *
+|[=========]| [0:1] CP[mood='imperative'] -> Cbar[mood='imperative'] *
+(CP[mood='imperative']
+  (Cbar[mood='imperative']
+    (IP[+TNS, mood='imperative']
+      (VP[conj='fin', mood='imperative', num='sg', pers=2, tns='pres', type='pres']
+        (V[conj='fin', mood='imperative', num='sg', pers=2, tns='pres', val=1]
+          vení)))))
+
+
+
